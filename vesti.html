@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Обавештења</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --red: #B8161A; --red-dark: #8C0F12; --red-light: #F5EAEA;
+      --white: #FFFFFF; --off-white: #F7F5F2;
+      --gray-100: #EDEBE8; --gray-300: #C4C2BC; --gray-500: #7A7872;
+      --gray-700: #3D3C38; --gray-900: #1A1917;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Source Serif 4', Georgia, serif;
+      --max-width: 1100px; --header-h: 72px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--white); color: var(--gray-900); font-size: 16px; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+
+    /* TOP STRIP */
+    .top-strip { background: var(--red-dark); color: rgba(255,255,255,.8); font-size: 12px; padding: 6px 0; letter-spacing: .04em; }
+    .top-strip-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .top-strip a { color: rgba(255,255,255,.8); transition: color .15s; }
+    .top-strip a:hover { color: #fff; }
+
+    /* HEADER */
+    header { background: var(--white); border-bottom: 3px solid var(--red); position: sticky; top: 0; z-index: 200; transition: box-shadow .2s; }
+    .header-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: var(--header-h); gap: 24px; }
+    .logo { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+    .logo-emblem { width: 46px; height: 46px; background: var(--red); display: flex; align-items: center; justify-content: center; }
+    .logo-emblem svg { width: 28px; height: 28px; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .logo-name { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--red); }
+    .logo-tagline { font-size: 10px; color: var(--gray-500); letter-spacing: .08em; text-transform: uppercase; margin-top: 3px; }
+    nav { display: flex; align-items: center; }
+    nav a { font-size: 13px; color: var(--gray-700); padding: 8px 14px; letter-spacing: .02em; border-bottom: 2px solid transparent; white-space: nowrap; transition: color .15s, border-color .15s; }
+    nav a:hover { color: var(--red); border-bottom-color: var(--red); }
+    nav a.active { color: var(--red); border-bottom-color: var(--red); font-weight: 600; }
+    .header-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .nav-search { width: 34px; height: 34px; background: none; border: 1px solid var(--gray-300); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: border-color .15s; }
+    .nav-search:hover { border-color: var(--red); }
+    .nav-search svg { width: 14px; height: 14px; stroke: var(--gray-500); fill: none; stroke-width: 2; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; flex-direction: column; gap: 5px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--gray-700); transition: all .25s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .search-bar { display: none; background: var(--off-white); border-top: 1px solid var(--gray-100); padding: 12px 0; }
+    .search-bar.open { display: block; }
+    .search-bar-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 12px; }
+    .search-bar-inner svg { width: 16px; height: 16px; stroke: var(--gray-500); fill: none; stroke-width: 2; flex-shrink: 0; }
+    .search-bar-inner input { flex: 1; border: none; background: none; font-family: var(--font-body); font-size: 15px; color: var(--gray-900); outline: none; }
+    .search-bar-inner input::placeholder { color: var(--gray-300); }
+    #search-close { background: none; border: none; cursor: pointer; font-size: 14px; color: var(--gray-500); padding: 4px 8px; transition: color .15s; }
+    #search-close:hover { color: var(--red); }
+
+    /* PAGE HERO */
+    .page-hero { background: var(--gray-900); padding: 40px 0 36px; border-bottom: 3px solid var(--red); }
+    .page-hero-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+    .breadcrumb { font-size: 12px; color: rgba(255,255,255,.45); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .breadcrumb a { color: rgba(255,255,255,.55); transition: color .15s; }
+    .breadcrumb a:hover { color: #fff; }
+    .breadcrumb span { color: rgba(255,255,255,.3); }
+    .page-title { font-family: var(--font-display); font-size: clamp(24px,3vw,38px); font-weight: 700; color: white; margin-bottom: 8px; }
+    .page-subtitle { font-size: 14px; color: rgba(255,255,255,.6); font-style: italic; }
+
+    /* LAYOUT */
+    .inner-wrap { max-width: var(--max-width); margin: 0 auto; padding: 44px 24px 64px; display: grid; grid-template-columns: 1fr 300px; gap: 48px; }
+    .inner-main { min-width: 0; }
+    .inner-sidebar { display: flex; flex-direction: column; gap: 24px; }
+
+    /* SECTION LABEL */
+    .section-label { font-size: 10px; text-transform: uppercase; letter-spacing: .14em; color: var(--red); font-weight: 600; margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--gray-100); }
+
+    /* FILTER BAR */
+    .filter-bar { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 24px; }
+    .filter-btn { padding: 8px 16px; font-size: 12px; font-family: var(--font-body); letter-spacing: .06em; text-transform: uppercase; border: 1px solid var(--gray-300); background: white; cursor: pointer; transition: all .15s; color: var(--gray-700); }
+    .filter-btn:hover { border-color: var(--red); color: var(--red); }
+    .filter-btn.active { background: var(--red); color: white; border-color: var(--red); }
+
+    /* NEWS CARDS */
+    .all-news { display: flex; flex-direction: column; gap: 1px; }
+    .full-news-card { background: var(--off-white); padding: 24px; border-bottom: 1px solid var(--gray-100); display: flex; flex-direction: column; transition: background .15s; }
+    .full-news-card:hover { background: var(--gray-100); }
+    .fnc-meta { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+    .news-date { font-size: 11px; color: var(--gray-500); letter-spacing: .06em; text-transform: uppercase; }
+    .news-category { display: inline-block; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; padding: 3px 8px; font-weight: 600; }
+    .news-category.urgent { background: var(--red-light); color: var(--red); }
+    .news-category.info    { background: #EEF3F8; color: #1D4E7A; }
+    .news-category.event   { background: #EEF5EE; color: #235D23; }
+    .fnc-title { font-family: var(--font-display); font-size: 18px; font-weight: 600; color: var(--gray-900); line-height: 1.3; margin-bottom: 10px; }
+    .fnc-excerpt { font-size: 14px; color: var(--gray-500); line-height: 1.65; }
+    .link-arrow { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--red); text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 600; transition: color .15s; margin-top: 14px; }
+    .link-arrow:hover { color: var(--red-dark); }
+
+    /* WIDGETS */
+    .widget { background: var(--white); border: 1px solid var(--gray-100); }
+    .widget-header { background: var(--red); padding: 13px 18px; display: flex; align-items: center; gap: 10px; }
+    .widget-header svg { width: 16px; height: 16px; stroke: white; fill: none; stroke-width: 1.8; flex-shrink: 0; }
+    .widget-header-title { font-family: var(--font-display); font-size: 14px; font-weight: 600; color: white; }
+    .widget-body--no-pad { padding: 0; }
+    .qlink { display: flex; align-items: center; justify-content: space-between; padding: 11px 14px; background: var(--off-white); text-decoration: none; transition: background .15s; gap: 8px; border-bottom: 1px solid var(--gray-100); }
+    .qlink:last-child { border-bottom: none; }
+    .qlink:hover { background: var(--gray-100); }
+    .qlink-left { display: flex; align-items: center; gap: 10px; }
+    .qlink-dot { width: 4px; height: 4px; background: var(--red); flex-shrink: 0; }
+    .qlink-text { font-size: 13px; color: var(--gray-700); }
+    .qlink-arrow { font-size: 12px; color: var(--gray-300); flex-shrink: 0; }
+
+    /* FOOTER */
+    footer { background: var(--gray-900); color: rgba(255,255,255,.6); margin-top: 0; }
+    .footer-top-border { height: 3px; background: var(--red); }
+    .footer-inner { max-width: var(--max-width); margin: 0 auto; padding: 44px 24px 36px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+    .footer-brand .footer-logo-name { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: white; margin-bottom: 10px; }
+    .footer-brand p { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,.55); }
+    .footer-brand a { color: rgba(255,255,255,.7); transition: color .15s; }
+    .footer-brand a:hover { color: white; }
+    .footer-col h4 { font-family: var(--font-display); font-size: 12px; font-weight: 600; color: rgba(255,255,255,.9); margin-bottom: 14px; text-transform: uppercase; letter-spacing: .1em; }
+    .footer-col a { display: block; font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 8px; transition: color .15s; }
+    .footer-col a:hover { color: rgba(255,255,255,.9); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding: 14px 24px; }
+    .footer-bottom-inner { max-width: var(--max-width); margin: 0 auto; display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,.3); gap: 16px; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .inner-wrap { grid-template-columns: 1fr; padding: 32px 20px 48px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 28px; }
+    }
+    @media (max-width: 768px) {
+      :root { --header-h: 60px; }
+      .top-strip-inner { flex-direction: column; gap: 3px; text-align: center; }
+      .hamburger { display: flex; }
+      .nav-search { display: none; }
+      nav { display: none; position: absolute; top: var(--header-h); left: 0; right: 0; background: white; border-bottom: 3px solid var(--red); flex-direction: column; align-items: stretch; padding: 8px 0; box-shadow: 0 6px 20px rgba(0,0,0,.12); z-index: 199; }
+      nav.open { display: flex; }
+      nav a { padding: 13px 24px; border-bottom: none; border-left: 3px solid transparent; font-size: 15px; }
+      nav a.active, nav a:hover { border-left-color: var(--red); border-bottom: none; background: var(--off-white); }
+      .footer-inner { grid-template-columns: 1fr; padding: 28px 20px; gap: 24px; }
+      .footer-bottom-inner { flex-direction: column; gap: 6px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-strip">
+    <div class="top-strip-inner">
+      <span>Слободе 3, 11300 Смедерево &nbsp;|&nbsp; Tel: 026/617-383 &nbsp;|&nbsp; <a href="mailto:skola@gimnazijasd.edu.rs">skola@gimnazijasd.edu.rs</a></span>
+      <span>Основана 1874. године &nbsp;|&nbsp; <a href="https://www.ednevnik.rs" target="_blank">E-дневник</a> &nbsp;|&nbsp; <a href="https://www.e-skola.rs" target="_blank">E-школа</a> &nbsp;|&nbsp; <a href="https://ocimamladih.wixstudio.com/blog" target="_blank">Ученички блог</a></span>
+    </div>
+  </div>
+
+  <header id="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <div class="logo-emblem">
+          <svg viewBox="0 0 24 24"><polygon points="12,2 2,7 2,17 12,22 22,17 22,7" fill="none" stroke="white" stroke-width="1.5"/><line x1="12" y1="2" x2="12" y2="22" stroke="white" stroke-width="1.2"/><line x1="2" y1="7" x2="22" y2="7" stroke="white" stroke-width="1.2"/></svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Гимназија Смедерево</span>
+          <span class="logo-tagline">Појам доброг образовања</span>
+        </div>
+      </a>
+      <nav id="main-nav">
+        <a href="index.html">Почетна</a>
+        <a href="raspored.html">Распоред</a>
+        <a href="ucenici.html">Ученици</a>
+        <a href="upis.html">Упис</a>
+        <a href="o-skoli.html">О школи</a>
+        <a href="kontakt.html">Контакт</a>
+      </nav>
+      <div class="header-right">
+        <button class="nav-search" id="search-btn" aria-label="Претрага">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Отвори мени" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="search-bar" id="search-bar">
+      <div class="search-bar-inner">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="search-input" placeholder="Претражите сајт..." autocomplete="off">
+        <button id="search-close">✕</button>
+      </div>
+    </div>
+  </header>
+
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb"><a href="index.html">Почетна</a> <span>/</span> <span>Обавештења</span></div>
+      <h1 class="page-title">Обавештења</h1>
+      <p class="page-subtitle">Актуелне вести, обавештења и информације Гимназије Смедерево</p>
+    </div>
+  </div>
+
+  <div class="inner-wrap">
+    <main class="inner-main">
+      <div class="section-label">Сва обавештења</div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">Све</button>
+        <button class="filter-btn" data-filter="urgent">Важна обавештења</button>
+        <button class="filter-btn" data-filter="info">Информације</button>
+        <button class="filter-btn" data-filter="event">Догађаји</button>
+      </div>
+
+      <div class="all-news" id="news-container">
+
+        <article class="full-news-card" data-category="urgent">
+          <div class="fnc-meta">
+            <span class="news-date">14. април 2026.</span>
+            <span class="news-category urgent">Важно обавештење</span>
+          </div>
+          <h2 class="fnc-title">Пријаве за пријемне испите за специјализована одељења Гимназије у Смедереву</h2>
+          <p class="fnc-excerpt">Електронско пријављивање кандидата за полагање пријемног испита је од среде 1. априла до 8. априла 2026. до 16:00 сати. Пријављивање непосредно у матичним основним школама је у уторак и среду 7. и 8. априла од 09:00 до 16:00. У Гимназији се организују пријемни испити за упис у филолошко и информатичко одељење.</p>
+          <a href="vest.html?id=1" class="link-arrow">Прочитајте више →</a>
+        </article>
+
+        <article class="full-news-card" data-category="info">
+          <div class="fnc-meta">
+            <span class="news-date">10. април 2026.</span>
+            <span class="news-category info">Такмичења</span>
+          </div>
+          <h2 class="fnc-title">Резултати републичког такмичења из математике — април 2026.</h2>
+          <p class="fnc-excerpt">Ученици наше школе остварили су одличне резултате на овогодишњем републичком такмичењу из математике. Посебно се истичу ученици трећег и четвртог разреда који су освојили прва места у категорији.</p>
+          <a href="vest.html?id=2" class="link-arrow">Прочитајте више →</a>
+        </article>
+
+        <article class="full-news-card" data-category="event">
+          <div class="fnc-meta">
+            <span class="news-date">7. април 2026.</span>
+            <span class="news-category event">Догађај</span>
+          </div>
+          <h2 class="fnc-title">Завршна свечаност матураната — термин и организација</h2>
+          <p class="fnc-excerpt">Све потребне информације у вези са завршном свечаношћу матураната генерације 2025/2026. Свечаност ће бити одржана у Дому културе у Смедереву. Позивају се сви матурани и њихови родитељи.</p>
+          <a href="vest.html?id=3" class="link-arrow">Прочитајте више →</a>
+        </article>
+
+        <article class="full-news-card" data-category="urgent">
+          <div class="fnc-meta">
+            <span class="news-date">3. април 2026.</span>
+            <span class="news-category urgent">Важно обавештење</span>
+          </div>
+          <h2 class="fnc-title">Примери тестова са решењима — филолошко и информатичко одељење</h2>
+          <p class="fnc-excerpt">Објављени су примери тестова са решењима за приjeмне испите у филолошко и информатичко одељење. Тестови су доступни на сајту Министарства просвете и у школи.</p>
+          <a href="vest.html?id=4" class="link-arrow">Прочитајте више →</a>
+        </article>
+
+        <article class="full-news-card" data-category="info">
+          <div class="fnc-meta">
+            <span class="news-date">28. април 2026.</span>
+            <span class="news-category info">Информација</span>
+          </div>
+          <h2 class="fnc-title">Распоред писмених задатака и вежби за април 2026.</h2>
+          <p class="fnc-excerpt">Објављен је распоред писмених задатака и контролних вежби за април 2026. годину. Распоред је доступан за све разреде и одељења.</p>
+          <a href="vest.html?id=5" class="link-arrow">Прочитајте више →</a>
+        </article>
+
+        <article class="full-news-card" data-category="event">
+          <div class="fnc-meta">
+            <span class="news-date">21. април 2026.</span>
+            <span class="news-category event">Догађај</span>
+          </div>
+          <h2 class="fnc-title">Обавештење о слободним активностима — пријаве до 30. априла</h2>
+          <p class="fnc-excerpt">Ученици зaинтересовани за слободне активности у шкoли могу се пријавити до 30. априла. Доступне су активности из обласни науке, уметности и спорта.</p>
+          <a href="vest.html?id=6" class="link-arrow">Прочитајте више →</a>
+        </article>
+
+        <article class="full-news-card" data-category="info">
+          <div class="fnc-meta">
+            <span class="news-date">15. април 2026.</span>
+            <span class="news-category info">Информација</span>
+          </div>
+          <h2 class="fnc-title">Планови наставе и учења за школску 2025/2026. годину</h2>
+          <p class="fnc-excerpt">Објављени су планови наставе и учења за све предмете и разреде за школску 2025/2026. годину. Планови су доступни на овој страници и у школи.</p>
+          <a href="vest.html?id=7" class="link-arrow">Прочитајте више →</a>
+        </article>
+
+        <article class="full-news-card" data-category="info">
+          <div class="fnc-meta">
+            <span class="news-date">8. април 2026.</span>
+            <span class="news-category info">Информација</span>
+          </div>
+          <h2 class="fnc-title">Обавештење о осигурању ученика за 2025/2026. годину</h2>
+          <p class="fnc-excerpt">Сви ученици школе су осигурани за школову 2025/2026. годину. У случају повреде на путу до школе, у школи или на настави, потребно је одмах обавестити разредног старешину.</p>
+          <a href="vest.html?id=8" class="link-arrow">Прочитајте више →</a>
+        </article>
+
+      </div>
+    </main>
+
+    <aside class="inner-sidebar">
+      <div class="widget">
+        <div class="widget-header">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <span class="widget-header-title">Распоред часова</span>
+        </div>
+        <div class="widget-body--no-pad">
+          <a class="qlink" href="raspored.html"><div class="qlink-left"><div class="qlink-dot"></div><span class="qlink-text">Распоред за ученике</span></div><span class="qlink-arrow">→</span></a>
+          <a class="qlink" href="raspored.html"><div class="qlink-left"><div class="qlink-dot"></div><span class="qlink-text">Распоред за наставнике</span></div><span class="qlink-arrow">→</span></a>
+          <a class="qlink" href="raspored.html"><div class="qlink-left"><div class="qlink-dot"></div><span class="qlink-text">Распоред звоњења</span></div><span class="qlink-arrow">→</span></a>
+        </div>
+      </div>
+      <div class="widget">
+        <div class="widget-header">
+          <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+          <span class="widget-header-title">Корисни линкови</span>
+        </div>
+        <div class="widget-body--no-pad">
+          <a class="qlink" href="https://www.ednevnik.rs" target="_blank"><div class="qlink-left"><div class="qlink-dot"></div><span class="qlink-text">E-дневник</span></div><span class="qlink-arrow">↗</span></a>
+          <a class="qlink" href="https://www.e-skola.rs" target="_blank"><div class="qlink-left"><div class="qlink-dot"></div><span class="qlink-text">E-школа</span></div><span class="qlink-arrow">↗</span></a>
+          <a class="qlink" href="https://www.mpn.gov.rs" target="_blank"><div class="qlink-left"><div class="qlink-dot"></div><span class="qlink-text">Министарство просвете</span></div><span class="qlink-arrow">↗</span></a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <footer>
+    <div class="footer-top-border"></div>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo-name">Гимназија Смедерево</div>
+        <p>Слободе 3, 11300 Смедерево<br>Tel: 026/617-383 &nbsp;|&nbsp; Fax: 026/617-384<br><a href="mailto:skola@gimnazijasd.edu.rs">skola@gimnazijasd.edu.rs</a></p>
+      </div>
+      <div class="footer-col"><h4>Ученици</h4><a href="raspored.html">Распоред часова</a><a href="ucenici.html">Писмени задаци</a><a href="ucenici.html">Резултати такмичења</a></div>
+      <div class="footer-col"><h4>Школа</h4><a href="o-skoli.html">Историјат школе</a><a href="o-skoli.html">Колектив</a><a href="o-skoli.html">Галерија</a></div>
+      <div class="footer-col"><h4>Упис</h4><a href="upis.html">Актуелне информације</a><a href="upis.html">Термини уписа</a><a href="upis.html">ИТ одељење</a></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <span>© 2026 Гимназија Смедерево. Сва права задржана.</span>
+        <span>ПИБ: 100969259 &nbsp;|&nbsp; Матични број: 07198574</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Filter
+    document.querySelectorAll('.filter-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.filter-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.full-news-card').forEach(function(card) {
+          card.style.display = (filter === 'all' || card.dataset.category === filter) ? 'flex' : 'none';
+        });
+      });
+    });
+    // Header
+    const hamburger = document.getElementById('hamburger');
+    const mainNav = document.getElementById('main-nav');
+    const searchBtn = document.getElementById('search-btn');
+    const searchBar = document.getElementById('search-bar');
+    const searchClose = document.getElementById('search-close');
+    const searchInput = document.getElementById('search-input');
+    hamburger.addEventListener('click', function() {
+      const open = mainNav.classList.toggle('open');
+      hamburger.classList.toggle('open', open);
+      hamburger.setAttribute('aria-expanded', open);
+    });
+    document.addEventListener('click', function(e) {
+      if (!hamburger.contains(e.target) && !mainNav.contains(e.target)) {
+        mainNav.classList.remove('open'); hamburger.classList.remove('open');
+      }
+    });
+    searchBtn.addEventListener('click', function() { searchBar.classList.add('open'); searchInput.focus(); });
+    searchClose.addEventListener('click', function() { searchBar.classList.remove('open'); searchInput.value = ''; });
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') { searchBar.classList.remove('open'); searchInput.value = ''; } });
+    window.addEventListener('scroll', function() {
+      document.getElementById('site-header').style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,.1)' : 'none';
+    }, { passive: true });
+  </script>
+</body>
+</html>

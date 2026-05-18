@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакт</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --red: #B8161A; --red-dark: #8C0F12; --red-light: #F5EAEA;
+      --gold: #C8A84B; --white: #FFFFFF; --off-white: #F7F5F2;
+      --gray-100: #EDEBE8; --gray-300: #C4C2BC; --gray-500: #7A7872;
+      --gray-700: #3D3C38; --gray-900: #1A1917;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body: 'Source Serif 4', Georgia, serif;
+      --max-width: 1100px; --header-h: 72px;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); background: var(--white); color: var(--gray-900); font-size: 16px; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+
+    /* TOP STRIP */
+    .top-strip { background: var(--red-dark); color: rgba(255,255,255,.8); font-size: 12px; padding: 6px 0; letter-spacing: .04em; }
+    .top-strip-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .top-strip a { color: rgba(255,255,255,.8); transition: color .15s; }
+    .top-strip a:hover { color: #fff; }
+
+    /* HEADER */
+    header { background: var(--white); border-bottom: 3px solid var(--red); position: sticky; top: 0; z-index: 200; transition: box-shadow .2s; }
+    .header-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: var(--header-h); gap: 24px; }
+    .logo { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+    .logo-emblem { width: 46px; height: 46px; background: var(--red); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .logo-emblem svg { width: 28px; height: 28px; }
+    .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .logo-name { font-family: var(--font-display); font-size: 17px; font-weight: 700; color: var(--red); }
+    .logo-tagline { font-size: 10px; color: var(--gray-500); letter-spacing: .08em; text-transform: uppercase; margin-top: 3px; }
+    nav { display: flex; align-items: center; }
+    nav a { font-size: 13px; color: var(--gray-700); padding: 8px 14px; letter-spacing: .02em; border-bottom: 2px solid transparent; white-space: nowrap; transition: color .15s, border-color .15s; }
+    nav a:hover { color: var(--red); border-bottom-color: var(--red); }
+    nav a.active { color: var(--red); border-bottom-color: var(--red); font-weight: 600; }
+    .header-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .nav-search { width: 34px; height: 34px; background: none; border: 1px solid var(--gray-300); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: border-color .15s; }
+    .nav-search:hover { border-color: var(--red); }
+    .nav-search svg { width: 14px; height: 14px; stroke: var(--gray-500); fill: none; stroke-width: 2; }
+    .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; flex-direction: column; gap: 5px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--gray-700); transition: all .25s; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .search-bar { display: none; background: var(--off-white); border-top: 1px solid var(--gray-100); padding: 12px 0; }
+    .search-bar.open { display: block; }
+    .search-bar-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; display: flex; align-items: center; gap: 12px; }
+    .search-bar-inner svg { width: 16px; height: 16px; stroke: var(--gray-500); fill: none; stroke-width: 2; flex-shrink: 0; }
+    .search-bar-inner input { flex: 1; border: none; background: none; font-family: var(--font-body); font-size: 15px; color: var(--gray-900); outline: none; }
+    .search-bar-inner input::placeholder { color: var(--gray-300); }
+    #search-close { background: none; border: none; cursor: pointer; font-size: 14px; color: var(--gray-500); padding: 4px 8px; transition: color .15s; }
+    #search-close:hover { color: var(--red); }
+
+    /* PAGE HERO */
+    .page-hero { background: var(--gray-900); padding: 40px 0 36px; border-bottom: 3px solid var(--red); }
+    .page-hero-inner { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+    .breadcrumb { font-size: 12px; color: rgba(255,255,255,.45); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+    .breadcrumb a { color: rgba(255,255,255,.55); transition: color .15s; }
+    .breadcrumb a:hover { color: #fff; }
+    .breadcrumb span { color: rgba(255,255,255,.3); }
+    .page-title { font-family: var(--font-display); font-size: clamp(24px,3vw,38px); font-weight: 700; color: white; margin-bottom: 8px; }
+    .page-subtitle { font-size: 14px; color: rgba(255,255,255,.6); font-style: italic; }
+
+    /* CONTACT CARDS BAR */
+    .contact-bar { background: var(--red); }
+    .contact-bar-inner { max-width: var(--max-width); margin: 0 auto; display: grid; grid-template-columns: repeat(4,1fr); }
+    .contact-card { padding: 20px 20px; border-right: 1px solid rgba(255,255,255,.15); display: flex; align-items: center; gap: 14px; }
+    .contact-card:last-child { border-right: none; }
+    .contact-card-icon { width: 40px; height: 40px; background: rgba(255,255,255,.15); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .contact-card-icon svg { width: 18px; height: 18px; stroke: white; fill: none; stroke-width: 1.8; }
+    .contact-card-label { font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: rgba(255,255,255,.65); display: block; margin-bottom: 3px; }
+    .contact-card-val { font-family: var(--font-display); font-size: 14px; font-weight: 600; color: white; display: block; line-height: 1.2; }
+
+    /* MAIN LAYOUT */
+    .main-wrap { max-width: var(--max-width); margin: 0 auto; padding: 48px 24px 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+
+    /* SECTION LABEL */
+    .section-label { font-size: 10px; text-transform: uppercase; letter-spacing: .14em; color: var(--red); font-weight: 600; margin-bottom: 18px; display: flex; align-items: center; gap: 12px; }
+    .section-label::after { content: ''; flex: 1; height: 1px; background: var(--gray-100); }
+
+    /* CONTACT INFO */
+    .contact-intro h2 { font-family: var(--font-display); font-size: 26px; font-weight: 700; color: var(--gray-900); margin-bottom: 10px; }
+    .contact-intro p { font-size: 14px; color: var(--gray-500); line-height: 1.7; margin-bottom: 28px; }
+
+    .info-block { margin-bottom: 28px; }
+    .info-block-title { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--gray-900); margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--gray-100); }
+    .info-row { display: flex; gap: 14px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--gray-100); }
+    .info-row:last-child { border-bottom: none; }
+    .info-icon { width: 32px; height: 32px; background: var(--red-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
+    .info-icon svg { width: 14px; height: 14px; stroke: var(--red); fill: none; stroke-width: 2; }
+    .info-label { font-size: 11px; text-transform: uppercase; letter-spacing: .07em; color: var(--gray-500); margin-bottom: 2px; }
+    .info-val { font-size: 14px; color: var(--gray-900); font-weight: 600; line-height: 1.5; }
+    .info-val a { color: var(--red); transition: color .15s; }
+    .info-val a:hover { color: var(--red-dark); }
+    .info-sub { font-size: 12px; color: var(--gray-500); margin-top: 2px; }
+
+    /* RADNI SATI TABLE */
+    .hours-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    .hours-table tr { border-bottom: 1px solid var(--gray-100); }
+    .hours-table tr:last-child { border-bottom: none; }
+    .hours-table td { padding: 9px 12px; color: var(--gray-700); }
+    .hours-table tr:nth-child(even) td { background: var(--off-white); }
+    .hours-table td:first-child { font-weight: 600; color: var(--gray-900); }
+    .hours-table td:last-child { text-align: right; }
+    .closed { color: var(--gray-300) !important; font-style: italic; }
+
+    /* LICA */
+    .lice-card { display: flex; gap: 14px; align-items: flex-start; padding: 14px 16px; background: var(--off-white); border: 1px solid var(--gray-100); margin-bottom: 1px; }
+    .lice-avatar { width: 44px; height: 44px; background: var(--red); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .lice-avatar svg { width: 20px; height: 20px; stroke: white; fill: none; stroke-width: 1.8; }
+    .lice-name { font-family: var(--font-display); font-size: 15px; font-weight: 600; color: var(--gray-900); margin-bottom: 2px; }
+    .lice-role { font-size: 12px; color: var(--gray-500); margin-bottom: 6px; }
+    .lice-contact { font-size: 12px; color: var(--gray-700); display: flex; flex-wrap: wrap; gap: 12px; }
+    .lice-contact span { display: flex; align-items: center; gap: 5px; }
+    .lice-contact svg { width: 12px; height: 12px; stroke: var(--gray-500); fill: none; stroke-width: 2; }
+
+    /* CONTACT FORM */
+    .form-wrap { background: var(--off-white); border: 1px solid var(--gray-100); padding: 28px; }
+    .form-title { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--gray-900); margin-bottom: 6px; }
+    .form-subtitle { font-size: 13px; color: var(--gray-500); margin-bottom: 24px; line-height: 1.6; }
+    .form-group { margin-bottom: 18px; }
+    .form-label { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .07em; color: var(--gray-700); font-weight: 600; margin-bottom: 7px; }
+    .form-label .req { color: var(--red); margin-left: 2px; }
+    .form-input, .form-select, .form-textarea {
+      width: 100%; padding: 11px 14px; border: 1px solid var(--gray-300);
+      background: var(--white); font-family: var(--font-body); font-size: 14px;
+      color: var(--gray-900); outline: none; transition: border-color .15s;
+      appearance: none; -webkit-appearance: none;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--red); }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--gray-300); }
+    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-select-wrap { position: relative; }
+    .form-select-wrap::after { content: '▼'; position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-size: 10px; color: var(--gray-500); pointer-events: none; }
+    .form-submit { width: 100%; padding: 14px; background: var(--red); color: white; border: none; font-family: var(--font-body); font-size: 13px; text-transform: uppercase; letter-spacing: .1em; font-weight: 600; cursor: pointer; transition: background .15s; display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 6px; }
+    .form-submit:hover { background: var(--red-dark); }
+    .form-submit svg { width: 16px; height: 16px; stroke: white; fill: none; stroke-width: 2; }
+    .form-note { font-size: 11px; color: var(--gray-500); margin-top: 12px; text-align: center; line-height: 1.5; }
+
+    /* SUCCESS MESSAGE */
+    .form-success { display: none; text-align: center; padding: 32px 20px; }
+    .form-success-icon { width: 56px; height: 56px; background: #EEF5EE; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
+    .form-success-icon svg { width: 26px; height: 26px; stroke: #235D23; fill: none; stroke-width: 2; }
+    .form-success h3 { font-family: var(--font-display); font-size: 20px; font-weight: 700; color: var(--gray-900); margin-bottom: 8px; }
+    .form-success p { font-size: 14px; color: var(--gray-500); line-height: 1.6; }
+
+    /* MAP SECTION */
+    .map-section { max-width: var(--max-width); margin: 0 auto; padding: 0 24px 48px; }
+    .map-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; gap: 16px; flex-wrap: wrap; }
+    .map-header h2 { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--gray-900); }
+    .map-directions { display: flex; gap: 8px; flex-wrap: wrap; }
+    .dir-btn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 16px; font-size: 12px; font-family: var(--font-body); letter-spacing: .06em; text-transform: uppercase; font-weight: 600; cursor: pointer; transition: all .15s; text-decoration: none; border: none; }
+    .dir-btn.primary { background: var(--red); color: white; }
+    .dir-btn.primary:hover { background: var(--red-dark); }
+    .dir-btn.secondary { background: none; border: 1px solid var(--gray-300); color: var(--gray-700); }
+    .dir-btn.secondary:hover { border-color: var(--red); color: var(--red); }
+    .dir-btn svg { width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2; }
+    .map-embed { width: 100%; height: 380px; border: 1px solid var(--gray-100); position: relative; overflow: hidden; background: var(--off-white); }
+    .map-embed iframe { width: 100%; height: 100%; border: none; display: block; }
+    .map-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; color: var(--gray-500); }
+    .map-placeholder svg { width: 40px; height: 40px; stroke: var(--gray-300); fill: none; stroke-width: 1.5; }
+    .map-placeholder p { font-size: 14px; }
+    .map-placeholder a { color: var(--red); font-weight: 600; text-decoration: underline; }
+    .map-info-strip { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--gray-100); border: 1px solid var(--gray-100); margin-top: 1px; }
+    .map-info-item { background: var(--white); padding: 16px 18px; display: flex; align-items: center; gap: 12px; }
+    .map-info-icon { width: 32px; height: 32px; background: var(--red-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .map-info-icon svg { width: 14px; height: 14px; stroke: var(--red); fill: none; stroke-width: 2; }
+    .map-info-label { font-size: 10px; text-transform: uppercase; letter-spacing: .07em; color: var(--gray-500); display: block; margin-bottom: 2px; }
+    .map-info-val { font-size: 13px; color: var(--gray-900); font-weight: 600; }
+
+    /* LEGAL INFO */
+    .legal-section { background: var(--off-white); border-top: 1px solid var(--gray-100); }
+    .legal-inner { max-width: var(--max-width); margin: 0 auto; padding: 32px 24px; }
+    .legal-inner h3 { font-family: var(--font-display); font-size: 16px; font-weight: 700; color: var(--gray-900); margin-bottom: 16px; }
+    .legal-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--gray-100); border: 1px solid var(--gray-100); }
+    .legal-item { background: var(--white); padding: 14px 16px; }
+    .legal-item-label { font-size: 10px; text-transform: uppercase; letter-spacing: .07em; color: var(--gray-500); margin-bottom: 4px; }
+    .legal-item-val { font-size: 13px; color: var(--gray-900); font-weight: 600; }
+
+    /* FOOTER */
+    footer { background: var(--gray-900); color: rgba(255,255,255,.6); }
+    .footer-top-border { height: 3px; background: var(--red); }
+    .footer-inner { max-width: var(--max-width); margin: 0 auto; padding: 44px 24px 36px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+    .footer-brand .footer-logo-name { font-family: var(--font-display); font-size: 18px; font-weight: 700; color: white; margin-bottom: 10px; }
+    .footer-brand p { font-size: 13px; line-height: 1.7; color: rgba(255,255,255,.55); }
+    .footer-brand a { color: rgba(255,255,255,.7); transition: color .15s; }
+    .footer-brand a:hover { color: white; }
+    .footer-col h4 { font-family: var(--font-display); font-size: 12px; font-weight: 600; color: rgba(255,255,255,.9); margin-bottom: 14px; text-transform: uppercase; letter-spacing: .1em; }
+    .footer-col a { display: block; font-size: 12px; color: rgba(255,255,255,.5); margin-bottom: 8px; transition: color .15s; }
+    .footer-col a:hover { color: rgba(255,255,255,.9); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding: 14px 24px; }
+    .footer-bottom-inner { max-width: var(--max-width); margin: 0 auto; display: flex; justify-content: space-between; font-size: 11px; color: rgba(255,255,255,.3); gap: 16px; }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .contact-bar-inner { grid-template-columns: 1fr 1fr; }
+      .contact-card { border-bottom: 1px solid rgba(255,255,255,.12); }
+      .main-wrap { grid-template-columns: 1fr; padding: 32px 20px 48px; gap: 36px; }
+      .map-info-strip { grid-template-columns: 1fr; }
+      .legal-grid { grid-template-columns: 1fr 1fr; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 28px; }
+    }
+    @media (max-width: 768px) {
+      :root { --header-h: 60px; }
+      .top-strip-inner { flex-direction: column; gap: 3px; text-align: center; }
+      .hamburger { display: flex; }
+      .nav-search { display: none; }
+      nav { display: none; position: absolute; top: var(--header-h); left: 0; right: 0; background: white; border-bottom: 3px solid var(--red); flex-direction: column; align-items: stretch; padding: 8px 0; box-shadow: 0 6px 20px rgba(0,0,0,.12); z-index: 199; }
+      nav.open { display: flex; }
+      nav a { padding: 13px 24px; border-bottom: none; border-left: 3px solid transparent; font-size: 15px; }
+      nav a.active, nav a:hover { border-left-color: var(--red); border-bottom: none; background: var(--off-white); }
+      .contact-bar-inner { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .map-embed { height: 280px; }
+      .legal-grid { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; padding: 28px 20px; gap: 24px; }
+      .footer-bottom-inner { flex-direction: column; gap: 6px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP STRIP -->
+  <div class="top-strip">
+    <div class="top-strip-inner">
+      <span>Слободе 3, 11300 Смедерево &nbsp;|&nbsp; Tel: 026/617-383 &nbsp;|&nbsp; <a href="mailto:skola@gimnazijasd.edu.rs">skola@gimnazijasd.edu.rs</a></span>
+      <span>Основана 1874. године &nbsp;|&nbsp; <a href="https://www.ednevnik.rs" target="_blank">E-dnevnik</a> &nbsp;|&nbsp; <a href="https://www.e-skola.rs" target="_blank">E-škola</a> &nbsp;|&nbsp; <a href="https://ocimamladih.wixstudio.com/blog" target="_blank">Ученички блог</a></span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header id="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <div class="logo-emblem">
+          <svg viewBox="0 0 24 24"><polygon points="12,2 2,7 2,17 12,22 22,17 22,7" fill="none" stroke="white" stroke-width="1.5"/><line x1="12" y1="2" x2="12" y2="22" stroke="white" stroke-width="1.2"/><line x1="2" y1="7" x2="22" y2="7" stroke="white" stroke-width="1.2"/></svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Гимназија Смедерево</span>
+          <span class="logo-tagline">Појам добrog образовања</span>
+        </div>
+      </a>
+      <nav id="main-nav">
+        <a href="index.html">Почетна</a>
+        <a href="raspored.html">Распоред</a>
+        <a href="ucenici.html">Ученици</a>
+        <a href="upis.html">Упис</a>
+        <a href="o-skoli.html">О школи</a>
+        <a href="kontakt.html" class="active">Контакт</a>
+      </nav>
+      <div class="header-right">
+        <button class="nav-search" id="search-btn" aria-label="Претрага">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Отвори мени" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="search-bar" id="search-bar">
+      <div class="search-bar-inner">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="search-input" placeholder="Претражите сајт..." autocomplete="off">
+        <button id="search-close">✕</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="index.html">Почетна</a><span>/</span><span>Контакт</span>
+      </div>
+      <h1 class="page-title">Контакт</h1>
+      <p class="page-subtitle">Пronaђите нас, пошаљите упит или нас позовите — ту смо радним данима од 07:30 до 15:30</p>
+    </div>
+  </div>
+
+  <!-- CONTACT BAR -->
+  <div class="contact-bar">
+    <div class="contact-bar-inner">
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 14a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 3.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 10a16 16 0 0 0 5.91 5.91l.83-.83a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17z"/></svg>
+        </div>
+        <div>
+          <span class="contact-card-label">Телефон</span>
+          <span class="contact-card-val">026/617-383</span>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <span class="contact-card-label">Е-пошта</span>
+          <span class="contact-card-val">skola@gimnazijasd.edu.rs</span>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <span class="contact-card-label">Адреса</span>
+          <span class="contact-card-val">Slobode 3, Smederevo</span>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <span class="contact-card-label">Радно време</span>
+          <span class="contact-card-val">Пон–Пет, 07:30–15:30</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN GRID -->
+  <div class="main-wrap">
+
+    <!-- LEFT — CONTACT INFO -->
+    <div>
+      <div class="contact-intro">
+        <h2>Подаци о школи</h2>
+        <p>За све упите, информације о упису, распореду и активностима школе можете нас контактирати телефоном, е-поштом или попунјавањем контакт форме.</p>
+      </div>
+
+      <!-- OSNOVI KONTAKT -->
+      <div class="info-block">
+        <div class="info-block-title">Основни контакт подаци</div>
+        <div class="info-row">
+          <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 14a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 3.24h3a2 2 0 0 1 2 1.72"/></svg></div>
+          <div>
+            <div class="info-label">Телефон</div>
+            <div class="info-val"><a href="tel:026617383">026/617-383</a></div>
+            <div class="info-sub">Секретаријат — радним данима 07:30–15:30</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 14a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 3.24h3a2 2 0 0 1 2 1.72"/></svg></div>
+          <div>
+            <div class="info-label">Факс</div>
+            <div class="info-val">026/617-384</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <div class="info-label">Е-пошта</div>
+            <div class="info-val"><a href="mailto:skola@gimnazijasd.edu.rs">skola@gimnazijasd.edu.rs</a></div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <div>
+            <div class="info-label">Веб сајт</div>
+            <div class="info-val"><a href="https://www.gimnazijasd.edu.rs" target="_blank">www.gimnazijasd.edu.rs</a></div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <div class="info-label">Адреса</div>
+            <div class="info-val">Слободе 3, 11300 Смедерево</div>
+            <div class="info-sub">Центар града — код Трга Републике</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RADNO VREME -->
+      <div class="info-block">
+        <div class="info-block-title">Радно време секретаријата</div>
+        <table class="hours-table">
+          <tr><td>Понедељак</td><td>07:30 – 15:30</td></tr>
+          <tr><td>Уторак</td><td>07:30 – 15:30</td></tr>
+          <tr><td>Среда</td><td>07:30 – 15:30</td></tr>
+          <tr><td>Четвртак</td><td>07:30 – 15:30</td></tr>
+          <tr><td>Петак</td><td>07:30 – 15:30</td></tr>
+          <tr><td>Субота</td><td class="closed">Затворено</td></tr>
+          <tr><td>Недеља</td><td class="closed">Затворено</td></tr>
+        </table>
+      </div>
+
+      <!-- LICA -->
+      <div class="section-label">Одговорна лица</div>
+
+      <div class="lice-card">
+        <div class="lice-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div>
+          <div class="lice-name">Александар Ђорђевић</div>
+          <div class="lice-role">Директор школе</div>
+          <div class="lice-contact">
+            <span><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2"/></svg> 026/617-383</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4"/></svg> skola@gimnazijasd.edu.rs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lice-card" style="margin-top:1px">
+        <div class="lice-avatar" style="background:var(--gray-700)"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div>
+          <div class="lice-name">Слађана Марковић</div>
+          <div class="lice-role">Лице за заштиту података о личиности — дипломирани правник</div>
+          <div class="lice-contact">
+            <span><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2"/></svg> 060/887-7001</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4"/></svg> licegimnazija<wbr>sd@gmail.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT — CONTACT FORM -->
+    <div>
+      <div class="form-wrap">
+        <div id="form-container">
+          <div class="form-title">Пошаљите упит</div>
+          <p class="form-subtitle">Попуните форму и одговорићемо вам у року од једног радног дана. За хитне упите позовите нас директно на <strong>026/617-383</strong>.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="ime">Име <span class="req">*</span></label>
+              <input class="form-input" type="text" id="ime" placeholder="Vaše ime" autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="prezime">Презиме <span class="req">*</span></label>
+              <input class="form-input" type="text" id="prezime" placeholder="Vaše prezime" autocomplete="family-name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">E-Пошта <span class="req">*</span></label>
+            <input class="form-input" type="email" id="email" placeholder="vasa@email.com" autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="telefon">Телефон</label>
+            <input class="form-input" type="tel" id="telefon" placeholder="06X XXX XXXX" autocomplete="tel">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="tema">Тема упита <span class="req">*</span></label>
+            <div class="form-select-wrap">
+              <select class="form-select" id="tema">
+                <option value="" disabled selected>Изаберите тему...</option>
+                <option value="upis">Упис у први разред</option>
+                <option value="raspored">Распоред часова</option>
+                <option value="takmicenja">Такмичења и награде</option>
+                <option value="dokumenta">Документа и потврде</option>
+                <option value="nastavnici">Контакт са наставником</option>
+                <option value="tehnicko">Техничко питање о сајту</option>
+                <option value="ostalo">Остало</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="poruka">Порука <span class="req">*</span></label>
+            <textarea class="form-textarea" id="poruka" placeholder="Напишите ваш упит овде..."></textarea>
+          </div>
+
+          <div class="form-group" style="display:flex; align-items:flex-start; gap:10px; margin-bottom:8px;">
+            <input type="checkbox" id="saglasnost" style="margin-top:3px; accent-color:var(--red); flex-shrink:0;">
+            <label for="saglasnost" style="font-size:12px; color:var(--gray-500); line-height:1.6; cursor:pointer;">
+              Сагласан/на сам са обрадом личних података у сврху одговора на упит, у складу са Политиком заштите података Гимназије Смедерево.
+            </label>
+          </div>
+
+          <button class="form-submit" id="submit-btn" onclick="submitForm()">
+            <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Пошаљи поруку
+          </button>
+          <p class="form-note">Ваши подаци се користе искључиво за одговор на упит и неће бити прослеђени трећим лицима.</p>
+        </div>
+
+        <!-- SUCCESS STATE -->
+        <div class="form-success" id="form-success">
+          <div class="form-success-icon">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Порука је послата!</h3>
+          <p>Хвала што сте нас контактирали. Одговорићемо вам на наведену е-пошту у року од једног радног дана.</p>
+          <button onclick="resetForm()" style="margin-top:20px; background:none; border:1px solid var(--gray-300); padding:9px 20px; font-family:var(--font-body); font-size:13px; cursor:pointer; color:var(--gray-700); transition:all .15s;"
+            onmouseover="this.style.borderColor='var(--red)'; this.style.color='var(--red)'"
+            onmouseout="this.style.borderColor='var(--gray-300)'; this.style.color='var(--gray-700)'">
+            Пошаљи нови упит
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAP SECTION -->
+  <div class="map-section">
+    <div class="map-header">
+      <h2>Како доћи до нас</h2>
+      <div class="map-directions">
+        <a class="dir-btn primary" href="https://www.google.com/maps/dir/?api=1&destination=Slobode+3+Smederevo" target="_blank">
+          <svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          Упутства за долазак
+        </a>
+        <a class="dir-btn secondary" href="https://www.google.com/maps/place/Slobode+3,+Smederevo" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Отвори у Google Maps
+        </a>
+      </div>
+    </div>
+
+    <div class="map-embed">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2844.3!2d20.9298!3d44.6644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4757a5b0e0d8a93f%3A0x1!2sGimnazija+Smederevo%2C+Slobode+3%2C+Smederevo!5e0!3m2!1ssr!2srs!4v1"
+        width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Локација Гимназије Смедерево">
+      </iframe>
+    </div>
+
+    <div class="map-info-strip">
+      <div class="map-info-item">
+        <div class="map-info-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <div><span class="map-info-label">Аутобуска станица</span><span class="map-info-val">~10 минута пешице</span></div>
+      </div>
+      <div class="map-info-item">
+        <div class="map-info-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><span class="map-info-label">Адреса</span><span class="map-info-val">Слободе 3, 11300 Смедерево</span></div>
+      </div>
+      <div class="map-info-item">
+        <div class="map-info-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h6M3 15h6"/></svg></div>
+        <div><span class="map-info-label">Паркинг</span><span class="map-info-val">Јавни паркинг у близини</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEGAL INFO -->
+  <div class="legal-section">
+    <div class="legal-inner">
+      <h3>Званични подаци установе</h3>
+      <div class="legal-grid">
+        <div class="legal-item"><div class="legal-item-label">Пун назив</div><div class="legal-item-val">Гимназија Смедерево</div></div>
+        <div class="legal-item"><div class="legal-item-label">ПИБ</div><div class="legal-item-val">100969259</div></div>
+        <div class="legal-item"><div class="legal-item-label">Матични број</div><div class="legal-item-val">07198574</div></div>
+        <div class="legal-item"><div class="legal-item-label">Регистарски број</div><div class="legal-item-val">6183000595</div></div>
+        <div class="legal-item"><div class="legal-item-label">Шифра делатности</div><div class="legal-item-val">8531</div></div>
+        <div class="legal-item"><div class="legal-item-label">ПДВ обвезник</div><div class="legal-item-val">Не</div></div>
+        <div class="legal-item"><div class="legal-item-label">Текући рачун</div><div class="legal-item-val">840-92660-53</div></div>
+        <div class="legal-item"><div class="legal-item-label">Основач</div><div class="legal-item-val">Република Србија</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top-border"></div>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo-name">Гимназија Смедерево</div>
+        <p>Слободе 3, 11300 Смедерево<br>Tel: 026/617-383 &nbsp;|&nbsp; Fax: 026/617-384<br><a href="mailto:skola@gimnazijasd.edu.rs">skola@gimnazijasd.edu.rs</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Ученици</h4>
+        <a href="raspored.html">Распоред часова</a>
+        <a href="ucenici.html">Писани задаци</a>
+        <a href="ucenici.html">Такмичења</a>
+        <a href="ucenici.html">Ученички парламент</a>
+      </div>
+      <div class="footer-col">
+        <h4>Школа</h4>
+        <a href="o-skoli.html">Историјат школе</a>
+        <a href="o-skoli.html">КолектиВ</a>
+        <a href="o-skoli.html">Документа</a>
+        <a href="upis.html">Упис у први разред</a>
+      </div>
+      <div class="footer-col">
+        <h4>Линкови</h4>
+        <a href="https://www.ednevnik.rs" target="_blank">E-дневник</a>
+        <a href="https://www.e-skola.rs" target="_blank">E-школа</a>
+        <a href="https://www.mpn.gov.rs" target="_blank">Министарство просвете</a>
+        <a href="https://www.mojasrednjaskola.gov.rs" target="_blank">MojaSrednjaŠkola</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <span>© 2026 Гимназија Смедерево. Сва права задржана.</span>
+        <span>ПИБ: 100969259 &nbsp;|&nbsp; Матични број: 07198574</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  // ── FORM ──
+  function submitForm() {
+    const ime        = document.getElementById('ime').value.trim();
+    const prezime    = document.getElementById('prezime').value.trim();
+    const email      = document.getElementById('email').value.trim();
+    const tema       = document.getElementById('tema').value;
+    const poruka     = document.getElementById('poruka').value.trim();
+    const saglasnost = document.getElementById('saglasnost').checked;
+
+    // Simple validation
+    if (!ime || !prezime || !email || !tema || !poruka) {
+      alert('Молимо попуните сва обавезна поља означена звездицом (*).');
+      return;
+    }
+    if (!email.includes('@') || !email.includes('.')) {
+      alert('Молимо унесите исправну e-пошту.');
+      return;
+    }
+    if (!saglasnost) {
+      alert('Молимо потврдите сагласност за обраду личних података.');
+      return;
+    }
+
+    // Simulate sending — show success
+    const btn = document.getElementById('submit-btn');
+    btn.textContent = 'Slanje...';
+    btn.disabled = true;
+
+    setTimeout(function() {
+      document.getElementById('form-container').style.display = 'none';
+      document.getElementById('form-success').style.display   = 'block';
+    }, 800);
+  }
+
+  function resetForm() {
+    document.getElementById('ime').value      = '';
+    document.getElementById('prezime').value  = '';
+    document.getElementById('email').value    = '';
+    document.getElementById('telefon').value  = '';
+    document.getElementById('tema').value     = '';
+    document.getElementById('poruka').value   = '';
+    document.getElementById('saglasnost').checked = false;
+    const btn = document.getElementById('submit-btn');
+    btn.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" style="stroke:white;fill:none;stroke-width:2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Pošalji poruku';
+    btn.disabled = false;
+    document.getElementById('form-container').style.display = 'block';
+    document.getElementById('form-success').style.display   = 'none';
+  }
+
+  // Allow Enter to submit (Ctrl+Enter in textarea)
+  document.addEventListener('keydown', function(e) {
+    if (e.ctrlKey && e.key === 'Enter') submitForm();
+  });
+
+  // ── HEADER NAV ──
+  const hamburger   = document.getElementById('hamburger');
+  const mainNav     = document.getElementById('main-nav');
+  const searchBtn   = document.getElementById('search-btn');
+  const searchBar   = document.getElementById('search-bar');
+  const searchClose = document.getElementById('search-close');
+  const searchInput = document.getElementById('search-input');
+  const siteHeader  = document.getElementById('site-header');
+
+  hamburger.addEventListener('click', function() {
+    const open = mainNav.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    hamburger.setAttribute('aria-expanded', open);
+  });
+  mainNav.querySelectorAll('a').forEach(function(a) {
+    a.addEventListener('click', function() {
+      mainNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+  document.addEventListener('click', function(e) {
+    if (!hamburger.contains(e.target) && !mainNav.contains(e.target)) {
+      mainNav.classList.remove('open');
+      hamburger.classList.remove('open');
+    }
+  });
+  searchBtn.addEventListener('click', function() { searchBar.classList.add('open'); searchInput.focus(); });
+  searchClose.addEventListener('click', function() { searchBar.classList.remove('open'); searchInput.value = ''; });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') { searchBar.classList.remove('open'); searchInput.value = ''; }
+  });
+  window.addEventListener('scroll', function() {
+    siteHeader.style.boxShadow = window.scrollY > 10 ? '0 2px 12px rgba(0,0,0,.1)' : 'none';
+  }, { passive: true });
+  </script>
+</body>
+</html>
