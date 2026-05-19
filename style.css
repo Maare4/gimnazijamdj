@@ -736,7 +736,7 @@ footer { background: var(--gray-900); color: rgba(255,255,255,.6); }
     align-items: flex-start;
   }
   .btn-primary, .btn-outline { 
-    width: auto;
+    justify-content: center;
     padding: 11px 22px;
  }
   .quick-bar-inner { 
