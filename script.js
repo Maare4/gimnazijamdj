@@ -719,32 +719,3 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 }); // end DOMContentLoaded
-
-// Hamburger
-    var hamburger = document.getElementById('hamburger');
-    var mainNav   = document.getElementById('main-nav');
-    if (hamburger && mainNav) {
-      hamburger.addEventListener('click', function () {
-        var open = mainNav.classList.toggle('open');
-        hamburger.classList.toggle('open', open);
-        hamburger.setAttribute('aria-expanded', open);
-      });
-      document.addEventListener('click', function (e) {
-        if (!hamburger.contains(e.target) && !mainNav.contains(e.target)) {
-          mainNav.classList.remove('open');
-          hamburger.classList.remove('open');
-        }
-      });
-    }
-
-    // Countdown redirect
-    var count = 10;
-    var display = document.getElementById('redirect-count');
-    var timer = setInterval(function () {
-      count--;
-      if (display) display.textContent = count;
-      if (count <= 0) {
-        clearInterval(timer);
-        window.location.href = 'index.html';
-      }
-    }, 1000);
