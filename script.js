@@ -99,9 +99,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Events to highlight (day number → label)
   const EVENTS = {
-    8:  '8. apr — Rok za prijave za prijemni ispit',
-    17: '17. apr — Pisani ispit iz matematike (IV razred)',
-    24: '24. apr — Takmičenje iz srpskog jezika',
+    8:  '8. апр — Рок за пријаве за пријемни испит',
+    17: '17. апр — Пријемни испит из математике',
+    24: '24. апр — Такмичење из српског језика',
   };
 
   const TODAY   = new Date();
