@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (document.getElementById('timetable-container')) {
 
-    var DAYS = ['Ponedeljak', 'Utorak', 'Sreda', 'Četvrtak', 'Petak'];
+    var DAYS = ['Понедељак', 'Уторак', 'Среда', 'Четвртак', 'Петак'];
 
     var PERIODS = [
       { num: 1, time: '07:00–07:45' },
