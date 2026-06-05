@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>О школи</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- TOP STRIP -->
+  <div class="top-strip">
+    <div class="top-strip-inner">
+      <span>Слободе 3, 11300 Смедерево &nbsp;|&nbsp; Tel: 026/617-383 &nbsp;|&nbsp; <a href="mailto:skola@gimnazijasd.edu.rs">skola@gimnazijasd.edu.rs</a></span>
+      <span>Основана 1871. године &nbsp;|&nbsp; <a href="https://www.ednevnik.rs" target="_blank">E-дневник</a> &nbsp;|&nbsp; <a href="https://www.e-skola.rs" target="_blank">E-школа</a> &nbsp;|&nbsp; <a href="https://ocimamladih.wixstudio.com/blog" target="_blank">Ученички блог</a></span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header id="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <div class="logo-emblem">
+          <svg viewBox="0 0 24 24"><polygon points="12,2 2,7 2,17 12,22 22,17 22,7" fill="none" stroke="white" stroke-width="1.5"/><line x1="12" y1="2" x2="12" y2="22" stroke="white" stroke-width="1.2"/><line x1="2" y1="7" x2="22" y2="7" stroke="white" stroke-width="1.2"/></svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Гимназија Смедерево</span>
+          <span class="logo-tagline">Појам доброг образовања</span>
+        </div>
+      </a>
+      <nav id="main-nav">
+        <a href="index.html">Почетна</a>
+        <a href="raspored.html">Распоред</a>
+        <div class="nav-dropdown"><a href="ucenici.html">Ученици</a><button class="submenu-toggle">▾</button><div class="submenu"><a href="ucenici.html#pismeni">Писмени задаци</a><a href="ucenici.html#takmicenja">Такмичења</a><a href="ucenici.html#fakulteti">Упис на факултете</a><a href="ucenici.html#generacije">Ученици генерације</a><a href="ucenici.html#parlament">Ученички парламент</a><a href="ucenici.html#udzbenici">Списак уџбеника</a><a href="ucenici.html#kriterijumi">Критеријуми</a></div></div>
+<div class="nav-dropdown"><a href="upis.html">Упис</a><button class="submenu-toggle">▾</button><div class="submenu"><a href="upis.html#aktuelno">Актуелне информације</a><a href="upis.html#smerovi">Смерови</a><a href="upis.html#rokovi">Термини и рокови</a><a href="upis.html#bodovanje">Бодовање</a><a href="upis.html#dokumenta">Потребна документа</a><a href="upis.html#planovi">Планови наставе</a><a href="upis.html#faq">Честа питања</a></div></div>
+<div class="nav-dropdown"><a href="o-skoli.html">О школи</a><button class="submenu-toggle">▾</button><div class="submenu"><a href="o-skoli.html#istorijat">Историјат школе</a><a href="o-skoli.html#kolektiv">Колектив</a><a href="o-skoli.html#dokumenta">Документа</a><a href="o-skoli.html#galerija">Галерија</a><a href="o-skoli.html#kalendar">Календар рада</a></div></div>
+        <a href="kontakt.html">Контакт</a>
+      </nav>
+      <div class="header-right">
+        <button class="nav-search" id="search-btn" aria-label="Претрага">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Отвори мени" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="search-bar" id="search-bar">
+      <div class="search-bar-inner">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="search-input" placeholder="Претражите сајт..." autocomplete="off">
+        <button id="search-close">✕</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="index.html">Почетна</a><span>/</span><span>О школи</span>
+      </div>
+      <h1 class="page-title">О школи</h1>
+      <p class="page-subtitle">Историјат, колектив, документа, галерија и календар рада Гимназије Смедерево</p>
+    </div>
+  </div>
+
+  <!-- SECTION NAV -->
+  <div class="section-nav">
+    <div class="section-nav-inner">
+      <button class="sec-tab active" data-section="istorijat">Историјат шкoлe</button>
+      <button class="sec-tab" data-section="kolektiv">Колектив</button>
+      <button class="sec-tab" data-section="dokumenta">Документа</button>
+      <button class="sec-tab" data-section="galerija">Галерија</button>
+      <button class="sec-tab" data-section="kalendar">Календар рада</button>
+    </div>
+  </div>
+
+  <div class="inner-wrap">
+    <main class="inner-main">
+
+      <!-- ══ ISTORIJAT ══ -->
+      <section class="content-section active" id="sec-istorijat">
+        <div class="section-intro">
+          <h2>Историјат Гимназије Смедерево</h2>
+          <p>Једна од најстаријих школа у Србији са традицијом дужом од 150 година.</p>
+        </div>
+
+        <div class="stat-strip">
+          <div class="stat-card">
+            <div class="stat-num">1871</div>
+            <div class="stat-label">Година оснивања</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">150+</div>
+            <div class="stat-label">Година традиције</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">850+</div>
+            <div class="stat-label">Ученика</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">70+</div>
+            <div class="stat-label">Запослених</div>
+          </div>
+        </div>
+
+        <div class="section-label">О школи</div>
+        <div class="history-prose">
+          <p>Гимназија Смедерево једна је од најстаријих и најугледнијих образовних институција у Србији. Школа је основана 1874. године и од тада је била и остала расадник знања, културе и интелектуалног развоја генерација смедеревске омладине.</p>
+
+          <div class="pull-quote">
+            „Појам доброг образовања" — ове речи одавно су постале симбол онога што Гимназија Смедерево значи за регион и за све оне који су кроз њене дворане прошли на путу ка знању и успеху.
+          </div>
+
+          <p>Кроз више од век и по постојања, школа је формирала хиљаде генерација ученика, од којих су многи постали истакнути научници, уметници, правници, лекари и јавни радници. Смедеревска гимназија је увек пратила дух времена, реформишући наставне планове и уводећи нове методе рада, али никада не напуштајући темељне вредности класичног образовања.</p>
+
+          <h3>Зграда школе</h3>
+          <p>Садашња зграда Гимназије, смештена у самом центру Смедерева на адреси Слободе 3, представља један од архитектонских бисера града. Зграда је подигнута почетком 20. века у духу академског неокласиицизма, са карактеристичним колонадама и монументалним прочељем које доминира централним градским тргом. Проглашена је за културно добро од великог значаја.</p>
+
+          <h3>Специјализована одељeњa</h3>
+          <p>У складу са потребама савременог образовања и развоја технологијског друштва, Гимназија Смедерево је крајем 20. века оснивала специјализована одељењa — информатичко и филолошко. Ова одељењa привлаче надарене ученике из читавог смедеревског округа, који се припремаjу за упис на најпрестижније факултете у Србији и иноземству.</p>
+
+          <p>Захваљујући партнерству са Oracle Academy и програмом ECDL сертификације, ученици информатичког одељења стичу међународно признат ниво компетенција из обласни рачунарства и програмирања.</p>
+        </div>
+
+        <div class="section-label" style="margin-top: 36px;">Кључни датуми у историји школе</div>
+        <div class="hist-timeline">
+          <div class="hist-item">
+            <div class="hist-dot"></div>
+            <div class="hist-year">1871.</div>
+            <div class="hist-text">Оснивање Ниже реалне гимназије у Смедереву одлуком тадашње српске владе. Школа почиње са радом са свега неколико одељења.</div>
+          </div>
+          <div class="hist-item">
+            <div class="hist-dot"></div>
+            <div class="hist-year">1895.</div>
+            <div class="hist-text">Школа добија статус Пуне реалне гимназије и почиње да издаје матурске дипломе. Број ученика се значајно повећава.</div>
+          </div>
+          <div class="hist-item">
+            <div class="hist-dot"></div>
+            <div class="hist-year">1912.</div>
+            <div class="hist-text">Усељење у нову зграду у центру Смедерева, саграђену у неокласичком стилу која и данас стоји. Зграда постаје један од симбола града.</div>
+          </div>
+          <div class="hist-item">
+            <div class="hist-dot"></div>
+            <div class="hist-year">1944.</div>
+            <div class="hist-text">Школа наставља рад и после рата обнавља образовну делатност. Током послератних деценија Гимназија постаје центар интелектуалног живота у Смедереву.</div>
+          </div>
+          <div class="hist-item">
+            <div class="hist-dot"></div>
+            <div class="hist-year">1975.</div>
+            <div class="hist-text">У оквиру реформе образовног система, школа прође кроз трансформацију али задржи гимназијски карактер. Уводе се нови наставни програми.</div>
+          </div>
+          <div class="hist-item">
+            <div class="hist-dot"></div>
+            <div class="hist-year">1992.</div>
+            <div class="hist-text">Оснивање специјализованог одељења за математику и информатику — првог у Браничевском округу. Школа добија регионални значај.</div>
+          </div>
+          <div class="hist-item">
+            <div class="hist-dot"></div>
+            <div class="hist-year">2004.</div>
+            <div class="hist-text">Оснивање филолошког одељења са појачаном наставом енглеског и другог страног језика. Увођење DELF сертификације.</div>
+          </div>
+          <div class="hist-item">
+            <div class="hist-dot"></div>
+            <div class="hist-year">2024.</div>
+            <div class="hist-text">Прослава 150 година рада Гимназије Смедерево. Велика јубиларна свечаност уз присуство бивших ученика, званичника и културних личности.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ KOLEKTIV ══ -->
+      <section class="content-section" id="sec-kolektiv">
+        <div class="section-intro">
+          <h2>Наставни колектив</h2>
+          <p>Гимназија Смедерево запошљава висококвалификоване наставнике, стручне сараднике и административно особље. Сви наставници поседују одговарајуће стручно и педагошко образовање.</p>
+        </div>
+
+        <div class="kolektiv-intro">Школа тренутно има преко 70 запослених, од чега је око 55 наставника и стручних сарадника. Управа школе:</div>
+
+        <div class="department">
+          <div class="dept-title">Управа школе</div>
+          <div class="teacher-grid">
+            <div class="teacher-card">
+              <div class="teacher-name">Александар Ђорђевић</div>
+              <div class="teacher-subject">Директор</div>
+              <span class="teacher-role direktor">Директор</span>
+            </div>
+            <div class="teacher-card">
+              <div class="teacher-name">Весна Миловановић</div>
+              <div class="teacher-subject">Математика и рачунарство</div>
+              <span class="teacher-role pomocnik">Помоћник директора</span>
+            </div>
+            <div class="teacher-card">
+              <div class="teacher-name">Драгана Поповић</div>
+              <div class="teacher-subject">Психолог</div>
+              <span class="teacher-role pedagog">Стручни сарадник</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="department">
+          <div class="dept-title">Стручно веће — математика и природне науке</div>
+          <div class="teacher-grid">
+            <div class="teacher-card"><div class="teacher-name">Марија Петровић</div><div class="teacher-subject">Математика</div></div>
+            <div class="teacher-card"><div class="teacher-name">Радослав Јовановић</div><div class="teacher-subject">Математика</div></div>
+            <div class="teacher-card"><div class="teacher-name">Радован Станић</div><div class="teacher-subject">Физика</div></div>
+            <div class="teacher-card"><div class="teacher-name">Катарина Илић</div><div class="teacher-subject">Хемија</div></div>
+            <div class="teacher-card"><div class="teacher-name">Тамара Марић</div><div class="teacher-subject">Биологија</div></div>
+            <div class="teacher-card"><div class="teacher-name">Владимир Тошић</div><div class="teacher-subject">Информатика и рачунарство</div></div>
+          </div>
+        </div>
+
+        <div class="department">
+          <div class="dept-title">Стручно веће — језици и књижевност</div>
+          <div class="teacher-grid">
+            <div class="teacher-card"><div class="teacher-name">Светлана Милић</div><div class="teacher-subject">Српски језик и књижевност</div></div>
+            <div class="teacher-card"><div class="teacher-name">Емилија Ћирић</div><div class="teacher-subject">Српски језик и књижевност</div></div>
+            <div class="teacher-card"><div class="teacher-name">Ана Јoвић</div><div class="teacher-subject">Енглески језик</div></div>
+            <div class="teacher-card"><div class="teacher-name">Сaњa Николић</div><div class="teacher-subject">Енглески језик</div></div>
+            <div class="teacher-card"><div class="teacher-name">Мирјана Ковач</div><div class="teacher-subject">Немачки језик</div></div>
+            <div class="teacher-card"><div class="teacher-name">Ивана Лазић</div><div class="teacher-subject">Француски језик</div></div>
+          </div>
+        </div>
+
+        <div class="department">
+          <div class="dept-title">Стручно веће — друштвене науке</div>
+          <div class="teacher-grid">
+            <div class="teacher-card"><div class="teacher-name">Предраг Лукић</div><div class="teacher-subject">Историја</div></div>
+            <div class="teacher-card"><div class="teacher-name">Лидија Савић</div><div class="teacher-subject">Географија</div></div>
+            <div class="teacher-card"><div class="teacher-name">Милена Ристић</div><div class="teacher-subject">Социологија</div></div>
+            <div class="teacher-card"><div class="teacher-name">Иван Богић</div><div class="teacher-subject">Филозофија</div></div>
+            <div class="teacher-card"><div class="teacher-name">Гордана Васић</div><div class="teacher-subject">Психологија</div></div>
+          </div>
+        </div>
+
+        <div class="department">
+          <div class="dept-title">Стручно веће — уметност и физичко васпитање</div>
+          <div class="teacher-grid">
+            <div class="teacher-card"><div class="teacher-name">Бојан Ковач</div><div class="teacher-subject">Музичка култура</div></div>
+            <div class="teacher-card"><div class="teacher-name">Драгана Нешић</div><div class="teacher-subject">Ликовна култура</div></div>
+            <div class="teacher-card"><div class="teacher-name">Ненад Ђорђић</div><div class="teacher-subject">Физичко васпитање</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ DOKUMENTA ══ -->
+      <section class="content-section" id="sec-dokumenta">
+        <div class="section-intro">
+          <h2>Документа</h2>
+          <p>Јавни документи, правилници и општи акти Гимназије Смедерево доступни за преузимање.</p>
+        </div>
+
+        <div class="doc-category">
+          <div class="doc-cat-title">Општи акти школе</div>
+          <div class="doc-list">
+            <div class="doc-item">
+              <div class="doc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></div>
+              <div><div class="doc-name">Статут школе</div><div class="doc-note">Усвојен на седници Школског одбора, последње измене 2023.</div></div>
+              <div class="doc-dl"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>PDF</div>
+            </div>
+            <div class="doc-item">
+              <div class="doc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></div>
+              <div><div class="doc-name">Правилник о кућном реду</div><div class="doc-note">Правила понашања и процедуре у школи</div></div>
+              <div class="doc-dl"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>PDF</div>
+            </div>
+            <div class="doc-item">
+              <div class="doc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></div>
+              <div><div class="doc-name">Правилник о оценивању ученика</div><div class="doc-note">Усклађен са Правилником МПН, бр. 82/2019</div></div>
+              <div class="doc-dl"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>PDF</div>
+            </div>
+            <div class="doc-item">
+              <div class="doc-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg></div>
+              <div><div class="doc-name">Правилник о дискциплинској одговорности</div><div class="doc-note">Мере за заштиту права и обавеза ученика</div></div>
+              <div class="doc-dl"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>PDF</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="doc-category">
+          <div class="doc-cat-title">Годишњи план рада</div>
+          <div class="doc-list">
+            <div class="doc-item">
+              <div class="doc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+              <div><div class="doc-name">Годишњи план рада 2025/2026.</div><div class="doc-note">Усвојен на Наставничком већу, септембар 2025.</div></div>
+              <div class="doc-dl"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>PDF</div>
+            </div>
+            <div class="doc-item">
+              <div class="doc-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+              <div><div class="doc-name">Годишњи план рада 2024/2025.</div><div class="doc-note">Архивска верзија претходне школске године</div></div>
+              <div class="doc-dl"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>PDF</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="doc-category">
+          <div class="doc-cat-title">Заштита података и безбедност</div>
+          <div class="doc-list">
+            <div class="doc-item">
+              <div class="doc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+              <div><div class="doc-name">Политика заштите података о личности</div><div class="doc-note">Лице за заштиту: Слађана Марковић, дипл. правник</div></div>
+              <div class="doc-dl"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>PDF</div>
+            </div>
+            <div class="doc-item">
+              <div class="doc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+              <div><div class="doc-name">Протокол за заштиту ученика од насиља</div><div class="doc-note">Процедура за пријављивање и реаговање на насиље</div></div>
+              <div class="doc-dl"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>PDF</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="doc-category">
+          <div class="doc-cat-title">Финансијска документа</div>
+          <div class="doc-list">
+            <div class="doc-item">
+              <div class="doc-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+              <div><div class="doc-name">План јавних набавки 2026.</div><div class="doc-note">Усвојен и објављен у складу са Законом о јавним набавкама</div></div>
+              <div class="doc-dl"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>PDF</div>
+            </div>
+            <div class="doc-item">
+              <div class="doc-icon"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+              <div><div class="doc-name">План јавних набавки 2025.</div><div class="doc-note">Архивска верзија</div></div>
+              <div class="doc-dl"><svg viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>PDF</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ GALERIJA ══ -->
+      <section class="content-section" id="sec-galerija">
+        <div class="section-intro">
+          <h2>Галерија</h2>
+          <p>Фотографије зграде, свечаности и активности Гимназије Смедерево.</p>
+        </div>
+
+        <div class="section-label">Прослава школске славе — Свети Сава 2026.</div>
+        <div class="gallery-grid" style="margin-bottom: 36px;">
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+              Прослава школске славе
+            </div>
+            <div class="gallery-overlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+              Свечана сала
+            </div>
+            <div class="gallery-overlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+              Збор ученика
+            </div>
+            <div class="gallery-overlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+              Пригодни програм
+            </div>
+            <div class="gallery-overlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+              Колектив школе
+            </div>
+            <div class="gallery-overlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+          </div>
+        </div>
+
+        <div class="section-label">Завршна свечаност матураната 2026.</div>
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+              Матурска свечаност
+            </div>
+            <div class="gallery-overlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+              Подела диплома
+            </div>
+            <div class="gallery-overlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+              Матуранти 2025.
+            </div>
+            <div class="gallery-overlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+              Пригодни програм
+            </div>
+            <div class="gallery-overlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+          </div>
+          <div class="gallery-item">
+            <div class="gallery-placeholder">
+              <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21,15 16,10 5,21"/></svg>
+              Дом културе
+            </div>
+            <div class="gallery-overlay"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
+          </div>
+        </div>
+
+        <div class="gallery-note">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span>Фотографије су приказане као илустративни приказ галерије. У финалној верзији сајта овде би биле праве фотографије школе. Сва права на фотографије задржава Гимназија Смедерево.</span>
+        </div>
+      </section>
+
+      <!-- ══ KALENDAR RADA ══ -->
+      <section class="content-section" id="sec-kalendar">
+        <div class="section-intro">
+          <h2>Календар рада школе</h2>
+          <p>Распоред школске године, празника, одмора и испитних рокова за 2025/2026. годину.</p>
+        </div>
+
+        <div class="kal-section">
+          <div class="kal-section-title">Структура школске године</div>
+          <table class="kal-table">
+            <thead><tr><th>Период</th><th>Назив</th><th>Тип</th></tr></thead>
+            <tbody>
+              <tr><td>1. сеп – 31. дец 2025.</td><td>Прво полугодиште</td><td><span class="kal-badge radni">Настава</span></td></tr>
+              <tr><td>1. јан – 18. јан 2026.</td><td>Зимски одмор</td><td><span class="kal-badge neradni">Одмор</span></td></tr>
+              <tr><td>19. јан – 12. јун 2026.</td><td>Друго полугодиште</td><td><span class="kal-badge radni">Настава</span></td></tr>
+              <tr><td>15. јун – 30. јун 2026.</td><td>Јунски испитни рок</td><td><span class="kal-badge ispit">Испити</span></td></tr>
+              <tr><td>1. јул – 24. авг 2026.</td><td>Летњи одмор</td><td><span class="kal-badge neradni">Одмор</span></td></tr>
+              <tr><td>25. авг – 31. авг 2026.</td><td>Августовски испитни рок</td><td><span class="kal-badge ispit">Испити</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="kal-section">
+          <div class="kal-section-title">Државни и школски празници — нерадни дани</div>
+          <table class="kal-table">
+            <thead><tr><th>Датум</th><th>Назив</th><th></th></tr></thead>
+            <tbody>
+              <tr><td>1–2. јануар</td><td>Нова година</td><td><span class="kal-badge neradni">Нерадни</span></td></tr>
+              <tr><td>7. јануар</td><td>Божић (православни)</td><td><span class="kal-badge neradni">Нерадни</span></td></tr>
+              <tr><td>27. јануар</td><td>Дан Светог Саве — школска слава</td><td><span class="kal-badge neradni">Нерадни</span></td></tr>
+              <tr><td>15–16. фебруар</td><td>Дан државности Србије</td><td><span class="kal-badge neradni">Нерадни</span></td></tr>
+              <tr><td>Променљиво 2026.</td><td>Ускрс (православни)</td><td><span class="kal-badge neradni">Нерадни</span></td></tr>
+              <tr><td>1–2. мај</td><td>Празник рада</td><td><span class="kal-badge neradni">Нерадни</span></td></tr>
+              <tr><td>11. новембар</td><td>Дан примирја у Првом свеском рату</td><td><span class="kal-badge neradni">Нерадни</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="kal-section">
+          <div class="kal-section-title">Матурски испити 2026.</div>
+          <table class="kal-table">
+            <thead><tr><th>Датум</th><th>Предмет / активност</th><th></th></tr></thead>
+            <tbody>
+              <tr><td>1–5. јун 2026.</td><td>Пријава за матурски испит</td><td><span class="kal-badge ispit">Испит</span></td></tr>
+              <tr><td>15. јун 2026.</td><td>Матурски испит — Српски језик и књижевност</td><td><span class="kal-badge ispit">Испит</span></td></tr>
+              <tr><td>17. јун 2026.</td><td>Матурски испит — Изборни предмет 1</td><td><span class="kal-badge ispit">Испит</span></td></tr>
+              <tr><td>19. јун 2026.</td><td>Матурски испит — Изборни предмет 2</td><td><span class="kal-badge ispit">Испит</span></td></tr>
+              <tr><td>25. јун 2026.</td><td>Објављивање резултата матурског испита</td><td><span class="kal-badge ispit">Испит</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="inner-sidebar">
+
+      <div class="widget">
+        <div class="widget-header">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span class="widget-header-title">Подаци о школи</span>
+        </div>
+        <div class="info-card">
+          <div class="info-card-row"><span class="info-card-label">Оснивач</span><span class="info-card-val">Република Србија</span></div>
+          <div class="info-card-row"><span class="info-card-label">Оснивање</span><span class="info-card-val">1871. године</span></div>
+          <div class="info-card-row"><span class="info-card-label">Адреса</span><span class="info-card-val">Слободе 3, 11300 Смедерево</span></div>
+          <div class="info-card-row"><span class="info-card-label">Телефон</span><span class="info-card-val">026/617-383</span></div>
+          <div class="info-card-row"><span class="info-card-label">Факс</span><span class="info-card-val">026/617-384</span></div>
+          <div class="info-card-row"><span class="info-card-label">ПИБ</span><span class="info-card-val">100969259</span></div>
+          <div class="info-card-row"><span class="info-card-label">Мат. број</span><span class="info-card-val">07198574</span></div>
+          <div class="info-card-row"><span class="info-card-label">Тек. рачун</span><span class="info-card-val">840-92660-53</span></div>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-header">
+          <svg viewBox="0 0 24 24"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+          <span class="widget-header-title">Брзе везе</span>
+        </div>
+        <div class="widget-body widget-body--no-pad">
+          <a class="qlink" href="raspored.html"><div class="qlink-left"><div class="qlink-dot"></div><span class="qlink-text">Распоред часова</span></div><span class="qlink-arrow">→</span></a>
+          <a class="qlink" href="upis.html"><div class="qlink-left"><div class="qlink-dot"></div><span class="qlink-text">Упис у први разред</span></div><span class="qlink-arrow">→</span></a>
+          <a class="qlink" href="ucenici.html"><div class="qlink-left"><div class="qlink-dot"></div><span class="qlink-text">Писмени задаци</span></div><span class="qlink-arrow">→</span></a>
+          <a class="qlink" href="kontakt.html"><div class="qlink-left"><div class="qlink-dot"></div><span class="qlink-text">Контакт</span></div><span class="qlink-arrow">→</span></a>
+          <a class="qlink" href="https://www.ednevnik.rs" target="_blank"><div class="qlink-left"><div class="qlink-dot"></div><span class="qlink-text">Е-дневник</span></div><span class="qlink-arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-header">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <span class="widget-header-title">Текући месец</span>
+        </div>
+        <div class="widget-body" style="font-size:13px; color:var(--gray-700); line-height:1.8;">
+          <p><strong>Април 2026.</strong></p>
+          <p style="margin-top:8px; color:var(--gray-500);">Настава у току — друго полугодиште. Пријаве за приjeмни испит до 8. априла.</p>
+          <a href="#" onclick="switchSection('kalendar'); return false;" class="link-arrow" style="display:inline-flex; margin-top:12px;">Календар рада →</a>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top-border"></div>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo-name">Гимназија Смедерево</div>
+        <p>Слободе 3, 11300 Смедерево<br>Tel: 026/617-383 &nbsp;|&nbsp; Fax: 026/617-384<br><a href="mailto:skola@gimnazijasd.edu.rs">skola@gimnazijasd.edu.rs</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>О школи</h4>
+        <a href="#" onclick="switchSection('istorijat'); return false;">Историјат</a>
+        <a href="#" onclick="switchSection('kolektiv'); return false;">Колектив</a>
+        <a href="#" onclick="switchSection('dokumenta'); return false;">Документа</a>
+        <a href="#" onclick="switchSection('galerija'); return false;">Галерија</a>
+        <a href="#" onclick="switchSection('kalendar'); return false;">Календар рада</a>
+      </div>
+      <div class="footer-col">
+        <h4>Ученици</h4>
+        <a href="raspored.html">Распоред часова</a>
+        <a href="ucenici.html">Писмени задаци</a>
+        <a href="ucenici.html">Такмичења</a>
+        <a href="upis.html">Упис</a>
+      </div>
+      <div class="footer-col">
+        <h4>Контакт</h4>
+        <a href="kontakt.html">Контакт страница</a>
+        <a href="https://www.ednevnik.rs" target="_blank">Е-дневник</a>
+        <a href="https://www.e-skola.rs" target="_blank">Е-школа</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <span>© 2026 Гимназија Смедерево. Сва права задржана.</span>
+        <span>ПИБ: 100969259 &nbsp;|&nbsp; Матични број: 07198574</span>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

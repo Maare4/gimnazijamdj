@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ученици</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- TOP STRIP -->
+  <div class="top-strip">
+    <div class="top-strip-inner">
+      <span>Слободе 3, 11300 Смедерево &nbsp;|&nbsp; Tel: 026/617-383 &nbsp;|&nbsp; <a href="mailto:skola@gimnazijasd.edu.rs">skola@gimnazijasd.edu.rs</a></span>
+      <span>Основана 1871. године &nbsp;|&nbsp; <a href="https://www.ednevnik.rs" target="_blank">Е-дневник</a> &nbsp;|&nbsp; <a href="https://www.e-skola.rs" target="_blank">Е-школа</a>&nbsp;|&nbsp; <a href="https://ocimamladih.wixstudio.com/blog" target="_blank">Ученички блог</a></span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header id="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <div class="logo-emblem">
+          <svg viewBox="0 0 24 24"><polygon points="12,2 2,7 2,17 12,22 22,17 22,7" fill="none" stroke="white" stroke-width="1.5"/><line x1="12" y1="2" x2="12" y2="22" stroke="white" stroke-width="1.2"/><line x1="2" y1="7" x2="22" y2="7" stroke="white" stroke-width="1.2"/></svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Гимназија Смедерево</span>
+          <span class="logo-tagline">Појам доброг образовања</span>
+        </div>
+      </a>
+      <nav id="main-nav">
+        <a href="index.html">Почетна</a>
+        <a href="raspored.html">Распоред</a>
+        <div class="nav-dropdown"><a href="ucenici.html">Ученици</a><button class="submenu-toggle">▾</button><div class="submenu"><a href="ucenici.html#pismeni">Писмени задаци</a><a href="ucenici.html#takmicenja">Такмичења</a><a href="ucenici.html#fakulteti">Упис на факултете</a><a href="ucenici.html#generacije">Ученици генерације</a><a href="ucenici.html#parlament">Ученички парламент</a><a href="ucenici.html#udzbenici">Списак уџбеника</a><a href="ucenici.html#kriterijumi">Критеријуми</a></div></div>
+<div class="nav-dropdown"><a href="upis.html">Упис</a><button class="submenu-toggle">▾</button><div class="submenu"><a href="upis.html#aktuelno">Актуелне информације</a><a href="upis.html#smerovi">Смерови</a><a href="upis.html#rokovi">Термини и рокови</a><a href="upis.html#bodovanje">Бодовање</a><a href="upis.html#dokumenta">Потребна документа</a><a href="upis.html#planovi">Планови наставе</a><a href="upis.html#faq">Честа питања</a></div></div>
+<div class="nav-dropdown"><a href="o-skoli.html">О школи</a><button class="submenu-toggle">▾</button><div class="submenu"><a href="o-skoli.html#istorijat">Историјат школе</a><a href="o-skoli.html#kolektiv">Колектив</a><a href="o-skoli.html#dokumenta">Документа</a><a href="o-skoli.html#galerija">Галерија</a><a href="o-skoli.html#kalendar">Календар рада</a></div></div>
+        <a href="kontakt.html">Контакт</a>
+      </nav>
+      <div class="header-right">
+        <button class="nav-search" id="search-btn" aria-label="Претрага">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Отвори мени" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="search-bar" id="search-bar">
+      <div class="search-bar-inner">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="search-input" placeholder="Претражите сајт..." autocomplete="off">
+        <button id="search-close">✕</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="index.html">Почетна</a><span>/</span><span>Ученици</span>
+      </div>
+      <h1 class="page-title">Ученици</h1>
+      <p class="page-subtitle">Писмени задаци, такмичења, факултети, парламент и остале информације за ученике</p>
+    </div>
+  </div>
+
+  <!-- SECTION NAV -->
+  <div class="section-nav">
+    <div class="section-nav-inner">
+      <button class="sec-tab active" data-section="pisani">Писмени задаци</button>
+      <button class="sec-tab" data-section="takmicenja">Такмичења</button>
+      <button class="sec-tab" data-section="fakulteti">Упис на факултете</button>
+      <button class="sec-tab" data-section="generacije">Ученици генерације</button>
+      <button class="sec-tab" data-section="parlament">Ученички парламент</button>
+      <button class="sec-tab" data-section="udzbenici">Списак уџбеника</button>
+      <button class="sec-tab" data-section="kriterijumi">Критеријуми</button>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="inner-wrap">
+    <main class="inner-main">
+
+      <!-- ══ PISANI ZADACI ══ -->
+      <section class="content-section active" id="sec-pisani">
+        <div class="section-intro">
+          <h2>Писмени задаци и контролне вежбе</h2>
+          <p>Распоред контролних вежби и писмених задатака за текућу школску годину. Молимо ученике да прате распоред и благовремено се припреме.</p>
+        </div>
+
+        <div class="info-note">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span>Распоред се може мењати. Пратите обавештења на огласној табли школе и на овом сајту.</span>
+        </div>
+
+        <span class="month-badge">April 2026.</span>
+        <table class="pisani-table" style="margin-bottom:28px">
+          <thead>
+            <tr>
+              <th>Датум</th><th>Предмет</th><th>Разред</th><th>Тип</th><th>Наставник</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>10. април</td><td><span class="subject-tag math">Математика</span></td><td>IV разред — сва одељења</td><td>Писмени задатак</td><td>Петровић М. / Јовановић Р.</td></tr>
+            <tr><td>14. април</td><td><span class="subject-tag lang">Српски језик</span></td><td>III разред — сва одељења</td><td>Писмени задатак</td><td>Милић С. / Ћирић Е.</td></tr>
+            <tr><td>17. април</td><td><span class="subject-tag sci">Физика</span></td><td>II разред — сва одељења</td><td>Контролна вежба</td><td>Станић Р.</td></tr>
+            <tr><td>22. април</td><td><span class="subject-tag sci">Хемија</span></td><td>I разред — сва одељења</td><td>Контролна вежба</td><td>Илић К.</td></tr>
+            <tr><td>24. април</td><td><span class="subject-tag lang">Енглески језик</span></td><td>II разред — сва одељења</td><td>Писмени задатак</td><td>Јовић А. / Николић С.</td></tr>
+            <tr><td>28. април</td><td><span class="subject-tag math">Математика</span></td><td>II разред — сва одељења</td><td>Контролна вежба</td><td>Петровић М. / Јовановић Р.</td></tr>
+          </tbody>
+        </table>
+
+        <span class="month-badge">Maj 2026.</span>
+        <table class="pisani-table">
+          <thead>
+            <tr>
+              <th>Датум</th><th>Предмет</th><th>Разред</th><th>Тип</th><th>Наставник</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>5. мај</td><td><span class="subject-tag sci">Биологија</span></td><td>I разред — сва одељења</td><td>Контролна вежба</td><td>Марић Т.</td></tr>
+            <tr><td>8. мај</td><td><span class="subject-tag lang">Српски језик</span></td><td>I разред — сва одељења</td><td>Писмени задатак</td><td>Милић С. / Ћирић Е.</td></tr>
+            <tr><td>12. мај</td><td><span class="subject-tag math">Математика</span></td><td>III разред — сва одељења</td><td>Писмени задатак</td><td>Петровић М. / Јовановић Р.</td></tr>
+            <tr><td>15. мај</td><td><span class="subject-tag sci">Физика</span></td><td>IV разред — сва одељења</td><td>Контролна вежба</td><td>Станић Р.</td></tr>
+            <tr><td>20. мај</td><td><span class="subject-tag soc">Историја</span></td><td>II разред — сва одељења</td><td>Контролна вежба</td><td>Лукић П.</td></tr>
+            <tr><td>26. мај</td><td><span class="subject-tag lang">Енглески језик</span></td><td>III разред — сва одељења</td><td>Писмени задатак</td><td>Јовић А. / Николић С.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ══ TAKMIČENJA ══ -->
+      <section class="content-section" id="sec-takmicenja">
+        <div class="section-intro">
+          <h2>Резултати такмичења 2025/2026.</h2>
+          <p>Преглед резултата ученика Гимназије Смедерево на школским, окружним и републичким такмичењима у текућој школској години.</p>
+        </div>
+        <div class="section-label">Републичка такмичења</div>
+        <div class="takm-grid" style="margin-bottom:24px">
+          <div class="takm-card">
+            <div class="takm-place gold">I</div>
+            <div class="takm-subject">Математика</div>
+            <div class="takm-info">Ана Јовановић, IV/1</div>
+            <div class="takm-info">Категорија: старији узраст</div>
+            <span class="takm-level republican">Републичко</span>
+          </div>
+          <div class="takm-card">
+            <div class="takm-place silver">II</div>
+            <div class="takm-subject">Српски језик и књижевност</div>
+            <div class="takm-info">Марко Николић, III/2</div>
+            <div class="takm-info">Категорија: средњи узраст</div>
+            <span class="takm-level republican">Републичко</span>
+          </div>
+          <div class="takm-card">
+            <div class="takm-place silver">II</div>
+            <div class="takm-subject">Хемија</div>
+            <div class="takm-info">Јована Стефановић, IV-b</div>
+            <div class="takm-info">Категорија: старији узраст</div>
+            <span class="takm-level republican">Републичко</span>
+          </div>
+          <div class="takm-card">
+            <div class="takm-place bronze">III</div>
+            <div class="takm-subject">Физика</div>
+            <div class="takm-info">Стефан Ђорђевић, III/1</div>
+            <div class="takm-info">Категорија: средњи узраст</div>
+            <span class="takm-level republican">Републичко</span>
+          </div>
+        </div>
+
+        <div class="section-label">Окружна такмичења</div>
+        <div class="takm-grid">
+          <div class="takm-card">
+            <div class="takm-place gold">I</div>
+            <div class="takm-subject">Енглески језик</div>
+            <div class="takm-info">Тијана Илић, II/1</div>
+            <span class="takm-level okruzno">Окружно</span>
+          </div>
+          <div class="takm-card">
+            <div class="takm-place gold">I</div>
+            <div class="takm-subject">Биологија</div>
+            <div class="takm-info">Никола Петровић, III/1</div>
+            <span class="takm-level okruzno">Окружно</span>
+          </div>
+          <div class="takm-card">
+            <div class="takm-place silver">II</div>
+            <div class="takm-subject">Информатика</div>
+            <div class="takm-info">Алекса Марковић, II/2</div>
+            <span class="takm-level okruzno">Окружно</span>
+          </div>
+          <div class="takm-card">
+            <div class="takm-place bronze">III</div>
+            <div class="takm-subject">Географија</div>
+            <div class="takm-info">Милица Савић, I/2</div>
+            <span class="takm-level okruzno">Окружно</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ UPIS NA FAKULTETE ══ -->
+      <section class="content-section" id="sec-fakulteti">
+        <div class="section-intro">
+          <h2>Упис на факултете</h2>
+          <p>Преглед факултета на које су уписани матуранти Гимназије Смедерево у претходним генерацијама.</p>
+        </div>
+
+        <div class="section-label">Генерација 2024/2025.</div>
+        <div class="fak-list" style="margin-bottom:28px">
+          <div class="fak-item">
+            <div><div class="fak-name">Електротехнички факултет Београд</div><div class="fak-faculty">Универзитет у Београду</div></div>
+            <span class="fak-badge">8 ученика</span>
+          </div>
+          <div class="fak-item">
+            <div><div class="fak-name">Математички факултет Београд</div><div class="fak-faculty">Универзитет у Београду</div></div>
+            <span class="fak-badge">5 ученика</span>
+          </div>
+          <div class="fak-item">
+            <div><div class="fak-name">Медицински факултет Београд</div><div class="fak-faculty">Универзитет у Београду</div></div>
+            <span class="fak-badge">4 ученика</span>
+          </div>
+          <div class="fak-item">
+            <div><div class="fak-name">Правни факултет Београд</div><div class="fak-faculty">Универзитет у Београду</div></div>
+            <span class="fak-badge">6 ученика</span>
+          </div>
+          <div class="fak-item">
+            <div><div class="fak-name">Факултет организационих наука</div><div class="fak-faculty">Универзитет у Београду</div></div>
+            <span class="fak-badge">3 ученика</span>
+          </div>
+          <div class="fak-item">
+            <div><div class="fak-name">Филолошки факултет Београд</div><div class="fak-faculty">Универзитет у Београду</div></div>
+            <span class="fak-badge">4 ученика</span>
+          </div>
+          <div class="fak-item">
+            <div><div class="fak-name">Факултет техничких наука Нови Сад</div><div class="fak-faculty">Универзитет у Новом Саду</div></div>
+            <span class="fak-badge">3 ученика</span>
+          </div>
+        </div>
+
+        <div class="section-label">Генерација 2023/2024.</div>
+        <div class="fak-list">
+          <div class="fak-item">
+            <div><div class="fak-name">Електротехнички факултет Београд</div><div class="fak-faculty">Универзитет у Београду</div></div>
+            <span class="fak-badge">10 ученика</span>
+          </div>
+          <div class="fak-item">
+            <div><div class="fak-name">Медицински факултет Београд</div><div class="fak-faculty">Универзитет у Београду</div></div>
+            <span class="fak-badge">6 ученика</span>
+          </div>
+          <div class="fak-item">
+            <div><div class="fak-name">Економски факултет Београд</div><div class="fak-faculty">Универзитет у Београду</div></div>
+            <span class="fak-badge">5 ученика</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ UČENICI GENERACIJE ══ -->
+      <section class="content-section" id="sec-generacije">
+        <div class="section-intro">
+          <h2>Ученици генерације</h2>
+          <p>Ученици који су постигли највећи успех током школовања у Гимназији Смедерево.</p>
+        </div>
+
+        <div class="gen-card">
+          <div class="gen-year-box"><span class="gen-year">2025</span><span class="gen-year-sub">Генерација</span></div>
+          <div class="gen-names">
+            <h3>Ана Јовановић</h3>
+            <p>Одељење IV/1 &nbsp;·&nbsp; Просечна оцена: 5,00 &nbsp;·&nbsp; Добитница Вукове дипломе сва четири разреда. Освајач прве награде на републичком такмичењу из математике. Уписала Математички факултет у Београду.</p>
+          </div>
+        </div>
+
+        <div class="gen-card">
+          <div class="gen-year-box"><span class="gen-year">2024</span><span class="gen-year-sub">Генерација</span></div>
+          <div class="gen-names">
+            <h3>Петар Ђорђевић</h3>
+            <p>Одељење IV/2 &nbsp;·&nbsp; Просечна оцена: 5,00 &nbsp;·&nbsp; Вуковац током целог школовања. Освајач сребрне медаље на републичком такмичењу из физике. Уписао Електротехнички факултет у Београду.</p>
+          </div>
+        </div>
+
+        <div class="gen-card">
+          <div class="gen-year-box"><span class="gen-year">2023</span><span class="gen-year-sub">Генерација</span></div>
+          <div class="gen-names">
+            <h3>Јелена Марковић</h3>
+            <p>Одељење IV/1 &nbsp;·&nbsp; Просечна оцена: 5,00 &nbsp;·&nbsp; Добитница бројних награда на такмичењима из српског језика и хемије. Уписала Медицински факултет у Београду.</p>
+          </div>
+        </div>
+
+        <div class="gen-card">
+          <div class="gen-year-box"><span class="gen-year">2022</span><span class="gen-year-sub">Генерација</span></div>
+          <div class="gen-names">
+            <h3>Никола Стефановић</h3>
+            <p>Одељење IV/1 &nbsp;·&nbsp; Просечна оцена: 5,00 &nbsp;·&nbsp; Вишеструки победник окружних и републичких такмичења из информатике и математике. Уписао Електротехнички факултет у Београду.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ UČENIČKI PARLAMENT ══ -->
+      <section class="content-section" id="sec-parlament">
+        <div class="section-intro">
+          <h2>Ученички парламент</h2>
+          <p>Ученички парламент Гимназије Смедерево за школску годину 2025/2026. Парламент заступа интересе свих ученика школе и сарађује са руководством школе.</p>
+        </div>
+
+        <div class="section-label">Председништво парламента</div>
+        <div class="parlament-grid" style="margin-bottom:28px">
+          <div class="parl-card">
+            <div class="parl-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div class="parl-name">Милица Петровић</div>
+            <div class="parl-role">Председница парламента</div>
+            <div class="parl-class">III/1</div>
+          </div>
+          <div class="parl-card">
+            <div class="parl-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div class="parl-name">Јован Николић</div>
+            <div class="parl-role">Потпредседник</div>
+            <div class="parl-class">III/2</div>
+          </div>
+          <div class="parl-card">
+            <div class="parl-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div class="parl-name">Софија Илић</div>
+            <div class="parl-role">Секретар</div>
+            <div class="parl-class">II/1</div>
+          </div>
+        </div>
+
+        <div class="section-label">Представници одељења</div>
+        <div class="parlament-grid">
+          <div class="parl-card">
+            <div class="parl-avatar" style="background:var(--gray-700)"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div class="parl-name">Ана Ђорђевић</div>
+            <div class="parl-role">Представник</div>
+            <div class="parl-class">I/1</div>
+          </div>
+          <div class="parl-card">
+            <div class="parl-avatar" style="background:var(--gray-700)"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div class="parl-name">Марко Савић</div>
+            <div class="parl-role">Представник</div>
+            <div class="parl-class">I/2</div>
+          </div>
+          <div class="parl-card">
+            <div class="parl-avatar" style="background:var(--gray-700)"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div class="parl-name">Јована Марић</div>
+            <div class="parl-role">Представник</div>
+            <div class="parl-class">II/2</div>
+          </div>
+          <div class="parl-card">
+            <div class="parl-avatar" style="background:var(--gray-700)"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div class="parl-name">Лука Станић</div>
+            <div class="parl-role">Представник</div>
+            <div class="parl-class">IV/1</div>
+          </div>
+          <div class="parl-card">
+            <div class="parl-avatar" style="background:var(--gray-700)"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div class="parl-name">Катарина Јовић</div>
+            <div class="parl-role">Представник</div>
+            <div class="parl-class">IV/2</div>
+          </div>
+          <div class="parl-card">
+            <div class="parl-avatar" style="background:var(--gray-700)"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div class="parl-name">Филип Лукић</div>
+            <div class="parl-role">Представник</div>
+            <div class="parl-class">III/1</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ══ UDŽBENICI ══ -->
+      <section class="content-section" id="sec-udzbenici">
+        <div class="section-intro">
+          <h2>Списак уџбеника</h2>
+          <p>Препоручени уџбеници и приручници за школску годину 2025/2026. Изаберите разред.</p>
+        </div>
+
+        <div class="udzbenici-filter">
+          <button class="udz-filter-btn active" data-razred="1">I разред</button>
+          <button class="udz-filter-btn" data-razred="2">II разред</button>
+          <button class="udz-filter-btn" data-razred="3">III разред</button>
+          <button class="udz-filter-btn" data-razred="4">IV разред</button>
+        </div>
+
+        <div id="udzbenici-content"></div>
+      </section>
+
+      <!-- ══ KRITERIJUMI ══ -->
+      <section class="content-section" id="sec-kriterijumi">
+        <div class="section-intro">
+          <h2>Критреијум оцењивања</h2>
+          <p>Општи критеријуми оцењивања знања и вештина ученика у Гимназији Смедерево, у складу са Правилником о оцењивању ученика у средњем образовању.</p>
+        </div>
+
+        <div class="info-note">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span>Критеријуми су усклађени са Правилником о оцењивању ученика у средњем образовању и васпитању (Сл. гласник РС, бр. 82/2019).</span>
+        </div>
+
+        <div class="section-label">Општи критеријуми</div>
+
+        <div class="krit-subject">
+          <div class="krit-header" onclick="toggleKrit(this)">
+            <div class="krit-header-left">
+              <span class="subject-tag math">Математика</span>
+              <span class="krit-subject-name">Математика</span>
+            </div>
+            <span class="krit-chevron">▼</span>
+          </div>
+          <div class="krit-body">
+            <p>Оцењивање се врши на основу усмених одговора, писаних задатака и контролних вежби. Писмена провера знања се спроводи према распореду који се објављује на сајту.</p>
+            <table>
+              <tr><th>Оцена</th><th>Опис</th><th>% тачних одговора</th></tr>
+              <tr><td class="grade-5">5 — Одличан</td><td>Потпуно влада градивом, примењује у новим ситуацијама</td><td>90–100%</td></tr>
+              <tr><td class="grade-4">4 — Врлодобар</td><td>Потпуно влада градивом, примењује у новим ситуацијама</td><td>75–89%</td></tr>
+              <tr><td class="grade-3">3 — Добар</td><td>Делимично влада градивом, примењује уз помоћ</td><td>55–74%</td></tr>
+              <tr><td class="grade-2">2 — Довољан</td><td>Минимално влада градивом, честе greške</td><td>40–54%</td></tr>
+              <tr><td class="grade-1">1 — Недовољан</td><td>Не влада градивом</td><td>0–39%</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="krit-subject">
+          <div class="krit-header" onclick="toggleKrit(this)">
+            <div class="krit-header-left">
+              <span class="subject-tag lang">Српски</span>
+              <span class="krit-subject-name">Српски језик и књижевност</span>
+            </div>
+            <span class="krit-chevron">▼</span>
+          </div>
+          <div class="krit-body">
+            <p>Оцењивање обухвата: усмени одговори (30%), писани задаци (40%), читање и разумевање текста (15%), активност на чasu (15%). Током школске године пишу се два писмена задатка.</p>
+            <table>
+              <tr><th>Оцена</th><th>Писмени задатак</th><th>Усмена одговор</th></tr>
+              <tr><td class="grade-5">5 — Одличан</td><td>18–20 поена</td><td>Тачан, исцрпан, без помоћи</td></tr>
+              <tr><td class="grade-4">4 — Врлодобар</td><td>14–17 поена</td><td>Тачан уз мале одударanja</td></tr>
+              <tr><td class="grade-3">3 — Добар</td><td>10–13 поена</td><td>Делимично тачан, уз навођење</td></tr>
+              <tr><td class="grade-2">2 — Довољан</td><td>6–9 поена</td><td>Минималан одговор</td></tr>
+              <tr><td class="grade-1">1 — Недовољан</td><td>0–5 поена</td><td>Не одговара на питање</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="krit-subject">
+          <div class="krit-header" onclick="toggleKrit(this)">
+            <div class="krit-header-left">
+              <span class="subject-tag lang">Енглески</span>
+              <span class="krit-subject-name">Енглески језик</span>
+            </div>
+            <span class="krit-chevron">▼</span>
+          </div>
+          <div class="krit-body">
+            <p>Оцењивање се заснива на четири језичке вештине: читање, слушање, писање и говor. Свака вештина носи 25% укупне оцене. Провера знања се врши усмено и писано.</p>
+          </div>
+        </div>
+
+        <div class="krit-subject">
+          <div class="krit-header" onclick="toggleKrit(this)">
+            <div class="krit-header-left">
+              <span class="subject-tag sci">Физика</span>
+              <span class="krit-subject-name">Физика</span>
+            </div>
+            <span class="krit-chevron">▼</span>
+          </div>
+          <div class="krit-body">
+            <p>Оцењивање обухвата теоријско знанје (50%) и решавање задатака (50%). Лабораторијске вежбе оцењују се посебно и улазе у закључну оцену. Посебно се вреднује разумевање физичких појава и примена формула.</p>
+          </div>
+        </div>
+
+        <div class="krit-subject">
+          <div class="krit-header" onclick="toggleKrit(this)">
+            <div class="krit-header-left">
+              <span class="subject-tag sci">Хемија</span>
+              <span class="krit-subject-name">Хемија</span>
+            </div>
+            <span class="krit-chevron">▼</span>
+          </div>
+          <div class="krit-body">
+            <p>Провера знања обухвата: теоријско градиво, хемијске једначине, рачунске задатке и лабораторијски рад. Лабораторијско оцењивање се врши једном у полугодишту.</p>
+          </div>
+        </div>
+
+        <div class="krit-subject">
+          <div class="krit-header" onclick="toggleKrit(this)">
+            <div class="krit-header-left">
+              <span class="subject-tag soc">Историја</span>
+              <span class="krit-subject-name">Историја</span>
+            </div>
+            <span class="krit-chevron">▼</span>
+          </div>
+          <div class="krit-body">
+            <p>Оцена се формира на основу усменог одговора (60%), писане провере (30%) и активности на чasu (10%). Посебно се вреднује способност анализе историјских извора и сагледавања узроčно-последичних веза.</p>
+          </div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- SIDEBAR -->
+    <aside class="inner-sidebar">
+      <div class="widget">
+        <div class="widget-header">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <span class="widget-header-title">Распоред часова</span>
+        </div>
+        <div class="widget-body widget-body--no-pad">
+          <a class="qlink" href="raspored.html"><div class="qlink-left"><div class="qlink-dot"></div><span class="qlink-text">Распоред за ученике</span></div><span class="qlink-arrow">→</span></a>
+          <a class="qlink" href="raspored.html"><div class="qlink-left"><div class="qlink-dot"></div><span class="qlink-text">Распоред звонења</span></div><span class="qlink-arrow">→</span></a>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-header">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+          <span class="widget-header-title">Корисни линкови</span>
+        </div>
+        <div class="widget-body widget-body--no-pad">
+          <a class="qlink" href="https://www.ednevnik.rs" target="_blank"><div class="qlink-left"><div class="qlink-dot"></div><span class="qlink-text">Е-дневник</span></div><span class="qlink-arrow">↗</span></a>
+          <a class="qlink" href="https://www.e-skola.rs" target="_blank"><div class="qlink-left"><div class="qlink-dot"></div><span class="qlink-text">Е-школа</span></div><span class="qlink-arrow">↗</span></a>
+          <a class="qlink" href="https://www.mpn.gov.rs" target="_blank"><div class="qlink-left"><div class="qlink-dot"></div><span class="qlink-text">Министарство просвете</span></div><span class="qlink-arrow">↗</span></a>
+          <a class="qlink" href="https://www.zuov.gov.rs" target="_blank"><div class="qlink-left"><div class="qlink-dot"></div><span class="qlink-text">Завод за унапредивање образовања</span></div><span class="qlink-arrow">↗</span></a>
+        </div>
+      </div>
+
+      <div class="widget">
+        <div class="widget-header">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 14a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 3.24h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 10a16 16 0 0 0 5.91 5.91l.83-.83a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.73 17z"/></svg>
+          <span class="widget-header-title">Контакт шкoлe</span>
+        </div>
+        <div class="widget-body" style="font-size:13px; color:var(--gray-700); line-height:1.8;">
+          <p><strong>Секретаријат:</strong><br>026/617-383</p>
+          <p style="margin-top:8px"><strong>Радно време:</strong><br>Пон–Пет, 07:30–15:30</p>
+          <a href="kontakt.html" class="link-arrow" style="display:inline-flex; margin-top:14px">Контакт страница →</a>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top-border"></div>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo-name">Гимназија Смедерево</div>
+        <p>Слободе 3, 11300 Смедерево<br>Tel: 026/617-383 &nbsp;|&nbsp; Fax: 026/617-384<br><a href="mailto:skola@gimnazijasd.edu.rs">skola@gimnazijasd.edu.rs</a></p>
+      </div>
+      <div class="footer-col"><h4>Ученици</h4><a href="raspored.html">Распоред часова</a><a href="ucenici.html">Писмени задаци</a><a href="ucenici.html">Резултати такмичења</a><a href="ucenici.html">Ученички парламент</a></div>
+      <div class="footer-col"><h4>Школа</h4><a href="o-skoli.html">Историјат школе</a><a href="o-skoli.html">Колектив</a><a href="o-skoli.html">Галерија</a></div>
+      <div class="footer-col"><h4>Упис</h4><a href="upis.html">Актуелне информације</a><a href="upis.html">Термини уписа</a><a href="upis.html">ИТ одељење</a></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <span>© 2026 Гимназија Смедерево. Сва права задржана.</span>
+        <span>ПИБ: 100969259 &nbsp;|&nbsp; Матични број: 07198574</span>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

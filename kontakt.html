@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакт</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- TOP STRIP -->
+  <div class="top-strip">
+    <div class="top-strip-inner">
+      <span>Слободе 3, 11300 Смедерево &nbsp;|&nbsp; Tel: 026/617-383 &nbsp;|&nbsp; <a href="mailto:skola@gimnazijasd.edu.rs">skola@gimnazijasd.edu.rs</a></span>
+      <span>Основана 1871. године &nbsp;|&nbsp; <a href="https://www.ednevnik.rs" target="_blank">E-дневник</a> &nbsp;|&nbsp; <a href="https://www.e-skola.rs" target="_blank">E-школа</a> &nbsp;|&nbsp; <a href="https://ocimamladih.wixstudio.com/blog" target="_blank">Ученички блог</a></span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header id="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">
+        <div class="logo-emblem">
+          <svg viewBox="0 0 24 24"><polygon points="12,2 2,7 2,17 12,22 22,17 22,7" fill="none" stroke="white" stroke-width="1.5"/><line x1="12" y1="2" x2="12" y2="22" stroke="white" stroke-width="1.2"/><line x1="2" y1="7" x2="22" y2="7" stroke="white" stroke-width="1.2"/></svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-name">Гимназија Смедерево</span>
+          <span class="logo-tagline">Појам доброг образовања</span>
+        </div>
+      </a>
+      <nav id="main-nav">
+        <a href="index.html">Почетна</a>
+        <a href="raspored.html">Распоред</a>
+        <div class="nav-dropdown"><a href="ucenici.html">Ученици</a><button class="submenu-toggle">▾</button><div class="submenu"><a href="ucenici.html#pismeni">Писмени задаци</a><a href="ucenici.html#takmicenja">Такмичења</a><a href="ucenici.html#fakulteti">Упис на факултете</a><a href="ucenici.html#generacije">Ученици генерације</a><a href="ucenici.html#parlament">Ученички парламент</a><a href="ucenici.html#udzbenici">Списак уџбеника</a><a href="ucenici.html#kriterijumi">Критеријуми</a></div></div>
+<div class="nav-dropdown"><a href="upis.html">Упис</a><button class="submenu-toggle">▾</button><div class="submenu"><a href="upis.html#aktuelno">Актуелне информације</a><a href="upis.html#smerovi">Смерови</a><a href="upis.html#rokovi">Термини и рокови</a><a href="upis.html#bodovanje">Бодовање</a><a href="upis.html#dokumenta">Потребна документа</a><a href="upis.html#planovi">Планови наставе</a><a href="upis.html#faq">Честа питања</a></div></div>
+<div class="nav-dropdown"><a href="o-skoli.html">О школи</a><button class="submenu-toggle">▾</button><div class="submenu"><a href="o-skoli.html#istorijat">Историјат школе</a><a href="o-skoli.html#kolektiv">Колектив</a><a href="o-skoli.html#dokumenta">Документа</a><a href="o-skoli.html#galerija">Галерија</a><a href="o-skoli.html#kalendar">Календар рада</a></div></div>
+        <a href="kontakt.html" class="active">Контакт</a>
+      </nav>
+      <div class="header-right">
+        <button class="nav-search" id="search-btn" aria-label="Претрага">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Отвори мени" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+    <div class="search-bar" id="search-bar">
+      <div class="search-bar-inner">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+        <input type="text" id="search-input" placeholder="Претражите сајт..." autocomplete="off">
+        <button id="search-close">✕</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <div class="breadcrumb">
+        <a href="index.html">Почетна</a><span>/</span><span>Контакт</span>
+      </div>
+      <h1 class="page-title">Контакт</h1>
+      <p class="page-subtitle">Прoнaђите нас, пошаљите упит или нас позовите — ту смо радним данима од 07:30 до 15:30</p>
+    </div>
+  </div>
+
+  <!-- CONTACT BAR -->
+  <div class="contact-bar">
+    <div class="contact-bar-inner">
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 14a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 3.24h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 10a16 16 0 0 0 5.91 5.91l.83-.83a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 17z"/></svg>
+        </div>
+        <div>
+          <span class="contact-card-label">Телефон</span>
+          <span class="contact-card-val">026/617-383</span>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <span class="contact-card-label">Е-пошта</span>
+          <span class="contact-card-val">skola@gimnazijasd.edu.rs</span>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <span class="contact-card-label">Адреса</span>
+          <span class="contact-card-val">Слободе 3, Смедерево</span>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <span class="contact-card-label">Радно време</span>
+          <span class="contact-card-val">Пон–Пет, 07:30–15:30</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN GRID -->
+  <div class="main-wrap">
+
+    <!-- LEFT — CONTACT INFO -->
+    <div>
+      <div class="contact-intro">
+        <h2>Подаци о школи</h2>
+        <p>За све упите, информације о упису, распореду и активностима школе можете нас контактирати телефоном, е-поштом или попунјавањем контакт форме.</p>
+      </div>
+
+      <!-- OSNOVI KONTAKT -->
+      <div class="info-block">
+        <div class="info-block-title">Основни контакт подаци</div>
+        <div class="info-row">
+          <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 14a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 3.24h3a2 2 0 0 1 2 1.72"/></svg></div>
+          <div>
+            <div class="info-label">Телефон</div>
+            <div class="info-val"><a href="tel:026617383">026/617-383</a></div>
+            <div class="info-sub">Секретаријат — радним данима 07:30–15:30</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 14a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 3.24h3a2 2 0 0 1 2 1.72"/></svg></div>
+          <div>
+            <div class="info-label">Факс</div>
+            <div class="info-val">026/617-384</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div>
+            <div class="info-label">Е-пошта</div>
+            <div class="info-val"><a href="mailto:skola@gimnazijasd.edu.rs">skola@gimnazijasd.edu.rs</a></div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <div>
+            <div class="info-label">Веб сајт</div>
+            <div class="info-val"><a href="https://www.gimnazijasd.edu.rs" target="_blank">www.gimnazijasd.edu.rs</a></div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div>
+            <div class="info-label">Адреса</div>
+            <div class="info-val">Слободе 3, 11300 Смедерево</div>
+            <div class="info-sub">Центар града — код Трга Републике</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RADNO VREME -->
+      <div class="info-block">
+        <div class="info-block-title">Радно време секретаријата</div>
+        <table class="hours-table">
+          <tr><td>Понедељак</td><td>07:30 – 15:30</td></tr>
+          <tr><td>Уторак</td><td>07:30 – 15:30</td></tr>
+          <tr><td>Среда</td><td>07:30 – 15:30</td></tr>
+          <tr><td>Четвртак</td><td>07:30 – 15:30</td></tr>
+          <tr><td>Петак</td><td>07:30 – 15:30</td></tr>
+          <tr><td>Субота</td><td class="closed">Затворено</td></tr>
+          <tr><td>Недеља</td><td class="closed">Затворено</td></tr>
+        </table>
+      </div>
+
+      <!-- LICA -->
+      <div class="section-label">Одговорна лица</div>
+
+      <div class="lice-card">
+        <div class="lice-avatar"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div>
+          <div class="lice-name">Александар Ђорђевић</div>
+          <div class="lice-role">Директор школе</div>
+          <div class="lice-contact">
+            <span><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2"/></svg> 026/617-383</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4"/></svg> skola@gimnazijasd.edu.rs</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lice-card" style="margin-top:1px">
+        <div class="lice-avatar" style="background:var(--gray-700)"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div>
+          <div class="lice-name">Слађана Марковић</div>
+          <div class="lice-role">Лице за заштиту података о личиности — дипломирани правник</div>
+          <div class="lice-contact">
+            <span><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2"/></svg> 060/887-7001</span>
+            <span><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4"/></svg> licegimnazija<wbr>sd@gmail.com</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT — CONTACT FORM -->
+    <div>
+      <div class="form-wrap">
+        <div id="form-container">
+          <div class="form-title">Пошаљите упит</div>
+          <p class="form-subtitle">Попуните форму и одговорићемо вам у року од једног радног дана. За хитне упите позовите нас директно на <strong>026/617-383</strong>.</p>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="ime">Име <span class="req">*</span></label>
+              <input class="form-input" type="text" id="ime" placeholder="Име" autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="prezime">Презиме <span class="req">*</span></label>
+              <input class="form-input" type="text" id="prezime" placeholder="Презиме" autocomplete="family-name">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="email">E-Пошта <span class="req">*</span></label>
+            <input class="form-input" type="email" id="email" placeholder="example@email.com" autocomplete="email">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="telefon">Телефон</label>
+            <input class="form-input" type="tel" id="telefon" placeholder="06X XXX XXXX" autocomplete="tel">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="tema">Тема упита <span class="req">*</span></label>
+            <div class="form-select-wrap">
+              <select class="form-select" id="tema">
+                <option value="" disabled selected>Изаберите тему...</option>
+                <option value="upis">Упис у први разред</option>
+                <option value="raspored">Распоред часова</option>
+                <option value="takmicenja">Такмичења и награде</option>
+                <option value="dokumenta">Документа и потврде</option>
+                <option value="nastavnici">Контакт са наставником</option>
+                <option value="tehnicko">Техничко питање о сајту</option>
+                <option value="ostalo">Остало</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="poruka">Порука <span class="req">*</span></label>
+            <textarea class="form-textarea" id="poruka" placeholder="Напишите ваш упит овде..."></textarea>
+          </div>
+
+          <div class="form-group" style="display:flex; align-items:flex-start; gap:10px; margin-bottom:8px;">
+            <input type="checkbox" id="saglasnost" style="margin-top:3px; accent-color:var(--red); flex-shrink:0;">
+            <label for="saglasnost" style="font-size:12px; color:var(--gray-500); line-height:1.6; cursor:pointer;">
+              Сагласан/на сам са обрадом личних података у сврху одговора на упит, у складу са Политиком заштите података Гимназије Смедерево.
+            </label>
+          </div>
+
+          <button class="form-submit" id="submit-btn" onclick="submitForm()">
+            <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Пошаљи поруку
+          </button>
+          <p class="form-note">Ваши подаци се користе искључиво за одговор на упит и неће бити прослеђени трећим лицима.</p>
+        </div>
+
+        <!-- SUCCESS STATE -->
+        <div class="form-success" id="form-success">
+          <div class="form-success-icon">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Порука је послата!</h3>
+          <p>Хвала што сте нас контактирали. Одговорићемо вам на наведену е-пошту у року од једног радног дана.</p>
+          <button onclick="resetForm()" style="margin-top:20px; background:none; border:1px solid var(--gray-300); padding:9px 20px; font-family:var(--font-body); font-size:13px; cursor:pointer; color:var(--gray-700); transition:all .15s;"
+            onmouseover="this.style.borderColor='var(--red)'; this.style.color='var(--red)'"
+            onmouseout="this.style.borderColor='var(--gray-300)'; this.style.color='var(--gray-700)'">
+            Пошаљи нови упит
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAP SECTION -->
+  <div class="map-section">
+    <div class="map-header">
+      <h2>Како доћи до нас</h2>
+      <div class="map-directions">
+        <a class="dir-btn primary" href="https://www.google.com/maps/dir/?api=1&destination=Slobode+3+Smederevo" target="_blank">
+          <svg viewBox="0 0 24 24"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          Упутства за долазак
+        </a>
+        <a class="dir-btn secondary" href="https://www.google.com/maps/place/Slobode+3,+Smederevo" target="_blank">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Отвори у Google Maps
+        </a>
+      </div>
+    </div>
+
+    <div class="map-embed">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2844.3!2d20.9298!3d44.6644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4757a5b0e0d8a93f%3A0x1!2sGimnazija+Smederevo%2C+Slobode+3%2C+Smederevo!5e0!3m2!1ssr!2srs!4v1"
+        width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Локација Гимназије Смедерево">
+      </iframe>
+    </div>
+
+    <div class="map-info-strip">
+      <div class="map-info-item">
+        <div class="map-info-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+        <div><span class="map-info-label">Аутобуска станица</span><span class="map-info-val">~10 минута пешице</span></div>
+      </div>
+      <div class="map-info-item">
+        <div class="map-info-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><span class="map-info-label">Адреса</span><span class="map-info-val">Слободе 3, 11300 Смедерево</span></div>
+      </div>
+      <div class="map-info-item">
+        <div class="map-info-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M3 9h6M3 15h6"/></svg></div>
+        <div><span class="map-info-label">Паркинг</span><span class="map-info-val">Јавни паркинг у близини</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEGAL INFO -->
+  <div class="legal-section">
+    <div class="legal-inner">
+      <h3>Званични подаци установе</h3>
+      <div class="legal-grid">
+        <div class="legal-item"><div class="legal-item-label">Пун назив</div><div class="legal-item-val">Гимназија Смедерево</div></div>
+        <div class="legal-item"><div class="legal-item-label">ПИБ</div><div class="legal-item-val">100969259</div></div>
+        <div class="legal-item"><div class="legal-item-label">Матични број</div><div class="legal-item-val">07198574</div></div>
+        <div class="legal-item"><div class="legal-item-label">Регистарски број</div><div class="legal-item-val">6183000595</div></div>
+        <div class="legal-item"><div class="legal-item-label">Шифра делатности</div><div class="legal-item-val">8531</div></div>
+        <div class="legal-item"><div class="legal-item-label">ПДВ обвезник</div><div class="legal-item-val">Не</div></div>
+        <div class="legal-item"><div class="legal-item-label">Текући рачун</div><div class="legal-item-val">840-92660-53</div></div>
+        <div class="legal-item"><div class="legal-item-label">Основач</div><div class="legal-item-val">Република Србија</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top-border"></div>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo-name">Гимназија Смедерево</div>
+        <p>Слободе 3, 11300 Смедерево<br>Tel: 026/617-383 &nbsp;|&nbsp; Fax: 026/617-384<br><a href="mailto:skola@gimnazijasd.edu.rs">skola@gimnazijasd.edu.rs</a></p>
+      </div>
+      <div class="footer-col">
+        <h4>Ученици</h4>
+        <a href="raspored.html">Распоред часова</a>
+        <a href="ucenici.html">Писани задаци</a>
+        <a href="ucenici.html">Такмичења</a>
+        <a href="ucenici.html">Ученички парламент</a>
+      </div>
+      <div class="footer-col">
+        <h4>Школа</h4>
+        <a href="o-skoli.html">Историјат школе</a>
+        <a href="o-skoli.html">КолектиВ</a>
+        <a href="o-skoli.html">Документа</a>
+        <a href="upis.html">Упис у први разред</a>
+      </div>
+      <div class="footer-col">
+        <h4>Линкови</h4>
+        <a href="https://www.ednevnik.rs" target="_blank">E-дневник</a>
+        <a href="https://www.e-skola.rs" target="_blank">E-школа</a>
+        <a href="https://www.mpn.gov.rs" target="_blank">Министарство просвете</a>
+        <a href="https://www.mojasrednjaskola.gov.rs" target="_blank">MojaSrednjaŠkola</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-bottom-inner">
+        <span>© 2026 Гимназија Смедерево. Сва права задржана.</span>
+        <span>ПИБ: 100969259 &nbsp;|&nbsp; Матични број: 07198574</span>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
